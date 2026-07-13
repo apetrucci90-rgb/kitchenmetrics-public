@@ -1,10 +1,10 @@
-# ChefPro — Engineering Notes
+# KitchenMetrics — Engineering Notes
 
-The source of ChefPro is private, but the engineering behind it doesn't have to be. This is a short case study of the most important bug found and fixed during the app's pre-release audit, plus an outline of how the app is built and tested.
+The source of KitchenMetrics is private, but the engineering behind it doesn't have to be. This is a short case study of the most important bug found and fixed during the app's pre-release audit, plus an outline of how the app is built and tested.
 
 ## Case study: the thermal model that was wrong in the dangerous direction
 
-ChefPro's Thermal Calculator predicts cooking and pasteurisation times from physics — transient heat conduction into the food — rather than from lookup tables.
+KitchenMetrics' Thermal Calculator predicts cooking and pasteurisation times from physics — transient heat conduction into the food — rather than from lookup tables.
 
 The first version used the classic one-term series solution for transient conduction with hard-coded coefficients `A1 = 4/π` and `λ1 = π/2`. Those constants are correct — but only in the **Bi → ∞ limit**, which physically means the food's surface jumps to oven temperature *instantly*. Real ovens transfer heat by convection (h ≈ 12–50 W/m²K), giving Biot numbers around 0.3–0.7, and the surface lags far behind.
 

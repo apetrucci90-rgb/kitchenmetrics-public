@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="icon.png" width="120" alt="ChefPro">
+  <img src="icon.png" width="120" alt="KitchenMetrics">
 </p>
 
-<h1 align="center">ChefPro — Professional Cooking Suite</h1>
+<h1 align="center">KitchenMetrics — Professional Cooking Suite</h1>
 
 <p align="center">
   Food costing, frying safety and cooking-time science for professional kitchens.<br>
@@ -33,7 +33,7 @@
 
 ## The costing model
 
-ChefPro follows the **Uniform System of Accounts for Restaurants (USAR)**, the standard
+KitchenMetrics follows the **Uniform System of Accounts for Restaurants (USAR)**, the standard
 published by the National Restaurant Association.
 
 **Two yields, applied in sequence.** Conflating them undercosts every cooked item:
@@ -55,7 +55,7 @@ Prime Cost % = (food + labour) ÷ net price × 100      # USAR headline · targe
 ```
 
 **Repricing works against your real menu price.** If a price is only ever *derived* from a
-target food cost, the ratio equals the target by construction and can never break. ChefPro
+target food cost, the ratio equals the target by construction and can never break. KitchenMetrics
 stores the price actually printed on your menu, so a supplier increase shows the true margin
 hit — and the price you'd need to recover it.
 
@@ -65,7 +65,7 @@ hit — and the price you'd need to recover it.
 
 - The energy **load factor defaults to 0.45 — an estimate, not a measurement.** It is the one
   number in the app not grounded in a published source. Measure yours with a plug meter.
-- ChefPro is a professional **estimation** tool. Always verify critical food-safety parameters
+- KitchenMetrics is a professional **estimation** tool. Always verify critical food-safety parameters
   against your own HACCP plan and local regulations.
 
 ---
