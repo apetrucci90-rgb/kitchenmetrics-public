@@ -43,17 +43,13 @@ private app storage (<code>SharedPreferences</code>).</p>
 </ul>
 
 <h2>3. Network use</h2>
-<p>KitchenMetrics contacts exactly one external service:</p>
-<ul>
-  <li><strong>USDA FoodData Central</strong> (<code>api.nal.usda.gov</code>), run by the United States
-      Department of Agriculture. When you use the Thermal Cooking Calculator, the app may request the
-      public nutritional composition of the food profile you selected.</li>
-</ul>
-<p>These requests contain only a public food identifier (for example, the catalogue number for
-"chicken breast"). They contain <strong>no personal data</strong>, no device identifiers, and nothing you
-typed into the app. All requests use HTTPS. If the request fails or you are offline, the app falls back
-to its built-in database and keeps working.</p>
-<p>USDA FoodData Central is a third party with its own privacy practices, which we do not control.</p>
+<p><strong>None.</strong> KitchenMetrics makes no network requests of any kind. It contacts no server,
+no analytics service and no third party. It works entirely offline, including in aeroplane mode.</p>
+<p>This is not only a policy — it is a property of the app itself. KitchenMetrics does not hold the
+Android <code>INTERNET</code> permission, so the operating system will not permit it to send anything
+anywhere, whatever its code might attempt.</p>
+<p>Earlier versions optionally queried USDA FoodData Central for public nutritional data. That lookup
+was removed on 13 July 2026. The scientific food data it provided is now embedded in the app itself.</p>
 
 <h2>4. Data we share</h2>
 <p><strong>None.</strong> We do not sell, rent or share data with anyone — we do not collect any.</p>
@@ -63,11 +59,14 @@ to its built-in database and keeps working.</p>
 It does not track you across apps or websites, and builds no profile of you.</p>
 
 <h2>6. Permissions</h2>
-<p>KitchenMetrics requests a single Android permission:</p>
-<ul>
-  <li><code>INTERNET</code> — used only for the optional USDA lookup described in section 3.</li>
-</ul>
-<p>It requests no access to location, camera, microphone, contacts, files or storage.</p>
+<p>KitchenMetrics requests <strong>no permission that grants access to your device or your data</strong>.
+In particular it does <strong>not</strong> hold the <code>INTERNET</code> permission, so it cannot send
+anything anywhere. It has no access to your location, camera, microphone, contacts, files or storage.</p>
+<p>For completeness: the build contains one internal, signature-level permission
+(<code>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>) that the Android support libraries add
+automatically. It is scoped to this app, is used only so the app's own components can talk to each
+other, and grants no access to anything on your phone. We mention it because it appears in the
+manifest and we would rather list it than have you find it.</p>
 
 <h2>7. Children</h2>
 <p>KitchenMetrics is a professional tool for kitchen and hospitality work. It is not directed at children and
