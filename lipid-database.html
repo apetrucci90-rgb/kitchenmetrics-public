@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChefPro — Lipid Science Database (Live Demo)</title>
+<style>
+  :root {
+    --bg: #f6f4ef; --card: #ffffff; --ink: #22211d; --ink2: #4a473f; --ink3: #8a857a;
+    --border: #e2ddd2; --accent: #b3541e; --accent-soft: #f4e3d7;
+    --low: #2e7d32; --low-bg: #e6f2e6; --med: #b26a00; --med-bg: #f7ecd9; --high: #b3261e; --high-bg: #f8e2e0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1b18; --card: #262521; --ink: #ece9e1; --ink2: #c5c0b4; --ink3: #8a857a;
+      --border: #3a382f; --accent: #e07a3f; --accent-soft: #3d2b1f;
+      --low: #7cc47f; --low-bg: #22351f; --med: #e0a34e; --med-bg: #3a2f1c; --high: #e07069; --high-bg: #3b201e;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; padding: 1.25rem; }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  header { margin-bottom: 1.25rem; }
+  .panel-title { font-size: 1.35rem; font-weight: 700; }
+  .panel-desc { font-size: .82rem; color: var(--ink3); margin-top: .2rem; }
+  .demo-note { font-size: .75rem; color: var(--ink2); background: var(--accent-soft); border: 1px solid var(--border); border-radius: 8px; padding: .5rem .75rem; margin-top: .75rem; }
+  .demo-note a { color: var(--accent); }
+  .two-col { display: grid; grid-template-columns: 1fr 1.4fr; gap: .75rem; }
+  @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: .9rem; }
+  .card + .card { margin-top: .75rem; }
+  .card-title { font-weight: 700; font-size: .95rem; margin-bottom: .6rem; }
+  label { display: block; font-size: .72rem; color: var(--ink3); margin-bottom: .25rem; text-transform: uppercase; letter-spacing: .04em; }
+  input, select { width: 100%; background: var(--bg); color: var(--ink); border: 1px solid var(--border); border-radius: 6px; padding: .45rem .55rem; font-size: .85rem; font-family: inherit; }
+  .form-group { margin-bottom: .6rem; }
+  .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; }
+  .data-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+  .data-item { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: .45rem .55rem; display: flex; flex-direction: column; gap: .15rem; }
+  .di-label { font-size: .66rem; color: var(--ink3); text-transform: uppercase; letter-spacing: .04em; }
+  .di-value { font-size: .88rem; font-weight: 600; }
+  .badge { display: inline-block; font-size: .7rem; font-weight: 700; padding: .12rem .5rem; border-radius: 999px; }
+  .badge-low { color: var(--low); background: var(--low-bg); }
+  .badge-medium { color: var(--med); background: var(--med-bg); }
+  .badge-high { color: var(--high); background: var(--high-bg); }
+  .source { margin-top: .75rem; font-size: .7rem; color: var(--ink3); border-top: 1px solid var(--border); padding-top: .5rem; }
+  .guide { font-size: .78rem; line-height: 1.8; color: var(--ink2); }
+  footer { margin-top: 1.5rem; font-size: .72rem; color: var(--ink3); text-align: center; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="panel-title">Lipid Science Database</div>
+    <div class="panel-desc">Physical &amp; chemical analysis of fats and oils · USDA/IOC/AOCS sources</div>
+    <div class="demo-note">
+      This is one panel of <a href="https://github.com/apetrucci90-rgb/chefpro-public">ChefPro Kitchen Suite</a>,
+      published as a standalone live demo. The full app (food costing, HACCP fryer analyzer, thermal
+      calculator, recipes) ships on Android.
+    </div>
+  </header>
+
+  <div class="two-col">
+    <div>
+      <div class="card">
+        <div class="card-title">Select Fat or Oil</div>
+        <div class="form-group">
+          <label>Search or filter</label>
+          <input type="text" id="lipidSearch" placeholder="Type to filter…" oninput="filterLipids()">
+        </div>
+        <div class="form-group">
+          <label>Fat / Oil</label>
+          <select id="lipidSelect" size="12" style="height:260px; font-size:.82rem;" onchange="showLipid()"></select>
+        </div>
+        <div class="form-group">
+          <label>Type filter</label>
+          <select id="lipidTypeFilter" onchange="filterLipids()">
+            <option value="">All types</option>
+            <option value="animal">Animal</option>
+            <option value="plant">Plant</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" id="lipidDetails" style="display:none;">
+        <div class="card-title" id="lipidName">—</div>
+        <div style="font-size:.78rem; color:var(--ink3); margin-bottom:.75rem;" id="lipidType"></div>
+
+        <div class="data-grid">
+          <div class="data-item"><span class="di-label">Smoke Point</span><span class="di-value" id="liSmoke">—</span></div>
+          <div class="data-item"><span class="di-label">Safe Temp.</span><span class="di-value" id="liSafe">—</span></div>
+          <div class="data-item"><span class="di-label">Freeze / Cloud</span><span class="di-value" id="liFreeze">—</span></div>
+          <div class="data-item"><span class="di-label">Crystallization</span><span class="di-value" id="liCryst">—</span></div>
+          <div class="data-item"><span class="di-label">Density (g/ml)</span><span class="di-value" id="liDens">—</span></div>
+          <div class="data-item"><span class="di-label">Oxidation Risk</span><span class="di-value" id="liRisk">—</span></div>
+        </div>
+
+        <div class="data-grid three" style="margin-top:.5rem;">
+          <div class="data-item"><span class="di-label">Saturated</span><span class="di-value" id="liSat">—</span></div>
+          <div class="data-item"><span class="di-label">Monounsat.</span><span class="di-value" id="liMono">—</span></div>
+          <div class="data-item"><span class="di-label">Polyunsat.</span><span class="di-value" id="liPoly">—</span></div>
+        </div>
+
+        <div class="data-grid" style="margin-top:.5rem;">
+          <div class="data-item"><span class="di-label">Allergens</span><span class="di-value" id="liAllergen">—</span></div>
+          <div class="data-item"><span class="di-label">Impurities / TPC</span><span class="di-value" id="liImp">—</span></div>
+        </div>
+
+        <div class="source" id="liSource"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Crystallization Guide</div>
+        <div class="guide">
+          <b>Alpha (α):</b> Rapid cooling, fine crystals, velvety texture.<br>
+          <b>Beta Prime (β'):</b> Best for aeration, fine &amp; stable crystals.<br>
+          <b>Beta (β):</b> Large, stable crystals — can be grainy.<br>
+          <b>Granular:</b> Grainy structure (typical of ghee).<br>
+          <b>Negative Temp:</b> Pour point for vegetable oils (stays liquid).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Part of <a href="https://github.com/apetrucci90-rgb/chefpro-public">ChefPro Kitchen Suite</a> ·
+    engineering notes in <a href="https://github.com/apetrucci90-rgb/chefpro-public/blob/main/TECHNICAL.md">TECHNICAL.md</a> ·
+    © Andrea Petrucci
+  </footer>
+</div>
+
+<script src="lipid_database.js"></script>
+<script>
+  let lipidFiltered = [];
+
+  function initLipid() {
+    lipidDatabase.sort((a, b) => a.name.localeCompare(b.name));
+    lipidFiltered = lipidDatabase;
+    rebuildLipidSelect();
+  }
+
+  function rebuildLipidSelect() {
+    const sel = document.getElementById('lipidSelect');
+    sel.innerHTML = '';
+    lipidFiltered.forEach((l, i) => {
+      const o = document.createElement('option');
+      o.value = i;
+      o.textContent = l.name + ' (' + (l.type === 'animal' ? 'Animal' : 'Plant') + ')';
+      sel.appendChild(o);
+    });
+  }
+
+  function filterLipids() {
+    const query = document.getElementById('lipidSearch').value.toLowerCase();
+    const typeF = document.getElementById('lipidTypeFilter').value;
+    lipidFiltered = lipidDatabase.filter(l => {
+      const matchName = !query || l.name.toLowerCase().includes(query);
+      const matchType = !typeF || l.type === typeF;
+      return matchName && matchType;
+    });
+    rebuildLipidSelect();
+    document.getElementById('lipidDetails').style.display = 'none';
+  }
+
+  function showLipid() {
+    const sel = document.getElementById('lipidSelect');
+    const i = sel.value;
+    if (i === '') { document.getElementById('lipidDetails').style.display = 'none'; return; }
+    const l = lipidFiltered[i];
+    document.getElementById('lipidDetails').style.display = 'block';
+    document.getElementById('lipidName').textContent = l.name;
+    document.getElementById('lipidType').textContent = '[ ' + (l.type === 'animal' ? 'Animal' : 'Plant') + ' ]';
+    document.getElementById('liSmoke').textContent = l.smoke;
+    document.getElementById('liSafe').textContent = l.safe;
+    document.getElementById('liFreeze').textContent = l.freeze;
+    document.getElementById('liCryst').textContent = l.cryst;
+    document.getElementById('liDens').textContent = l.dens;
+    const comp = (l.comp || '').split(' / ');
+    document.getElementById('liSat').textContent = comp[0] || '—';
+    document.getElementById('liMono').textContent = comp[1] || '—';
+    document.getElementById('liPoly').textContent = comp[2] || '—';
+    document.getElementById('liAllergen').textContent = l.allergen || '—';
+    const impStr = l.imp && l.imp !== '-' ? l.imp + ' | ' + l.tpc : (l.tpc || '—');
+    document.getElementById('liImp').textContent = impStr;
+    document.getElementById('liSource').textContent = 'Source: ' + l.src;
+    const riskMap = { low: 'badge-low', medium: 'badge-medium', high: 'badge-high' };
+    document.getElementById('liRisk').innerHTML = '<span class="badge ' + (riskMap[l.risk] || '') + '">' + (l.risk || '?').toUpperCase() + '</span>';
+  }
+
+  initLipid();
+</script>
+</body>
+</html>
