@@ -6,7 +6,7 @@
 
 <p align="center">
   Food costing, frying safety and cooking-time science for professional kitchens.<br>
-  Works fully offline · No accounts · No ads · No tracking · English / Italiano
+  Works fully offline · No accounts · No ads · No tracking · English / Italiano / Español
 </p>
 
 ---
@@ -17,7 +17,7 @@
 |---|---|
 | **Recipes & Menu Costing** | Ingredient library with supplier prices and price history. Multi-line dishes, sub-recipes, saved dish library, and menu-wide repricing: *"salmon went up 12% — which dishes break?"* |
 | **Food Cost Calculator** | EP cost, energy, labour, utilities, overhead and VAT. Reports **Food Cost %** and **Prime Cost %** against net revenue. |
-| **HACCP Fryer Analyzer** | TPC degradation, oil absorption and remaining oil life against the 25% discard threshold. |
+| **HACCP Fryer Analyzer** | TPC degradation, oil absorption and remaining oil life against the discard limit of the country you cook in — there is no EU, EFSA, FDA or Codex limit for polar compounds, and the national ones disagree (Italy and Spain 25%, Switzerland 27%, no legal limit at all in the UK, Ireland, the USA or Canada). |
 | **Thermal Cooking Calculator** | Ramp and hold times from the Choi-Okos model and Bigelow pathogen kinetics, 6-log reduction, 1073 food profiles. |
 | **Lipid Science Database** | ~300 fats and oils: smoke point, safe temperature, crystallisation, density, fatty-acid profile, oxidation risk, allergens. |
 | **Physical Screen Ruler** | DPI-calibrated ruler in cm and inches. |

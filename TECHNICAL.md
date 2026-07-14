@@ -26,8 +26,9 @@ The original model under-predicted by **3.4×, in the unsafe direction**: it dec
 
 - **Architecture:** a single self-contained HTML/JS application wrapped in an Android WebView shell, with a JS↔Android bridge for persistence (SharedPreferences on device, localStorage in the browser).
 - **Costing engine:** one engine aligned with USAR (Uniform System of Accounts for Restaurants): true ingredient yields, ancillary costs, VAT-aware pricing. Recipes support sub-recipes and menu-wide repricing when supplier prices change.
-- **i18n:** full English/Italian runtime translation (~376 keys), with an automated check for duplicate dictionary keys — the recurring bug class in that subsystem.
-- **Testing:** the costing engine is covered by an automated suite (31 assertions green at release), and every physical constant in the app is either traced to a published source or explicitly flagged as an estimate in the internal audit log.
+- **i18n:** full English / Italian / Spanish runtime translation, driven by a language order constant so that a fourth language is a dictionary plus one array entry, not a rewrite. An automated check enforces key parity across all three dictionaries and catches duplicate keys — a duplicate is silently dropped by the JS object literal, so it cannot be caught by reading the file, and it has been the recurring bug class in that subsystem.
+- **Regulatory data:** the fryer's oil-discard limits are held in a per-country registry rather than a single global number. There is no EU, EFSA, FDA or Codex limit for total polar compounds — the limits are national and they disagree — so the app names the jurisdiction it is quoting, flags the countries where sources contradict each other, and never presents an industry benchmark as if it were law.
+- **Testing:** the costing engine, the TPC registry and the Vault's per-client data scoping are each covered by automated suites (31, 138 and 15 assertions green at release), alongside a UI smoke suite and the i18n parity check. Every physical constant in the app is either traced to a published source or explicitly flagged as an estimate in the internal audit log.
 
 ## Contact
 
