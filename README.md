@@ -19,14 +19,15 @@
 | **Food Cost Calculator** | EP cost, energy, labour, utilities, overhead and VAT. Reports **Food Cost %** and **Prime Cost %** against net revenue. |
 | **HACCP Fryer Analyzer** | TPC degradation, oil absorption and remaining oil life against the discard limit of the country you cook in — there is no EU, EFSA, FDA or Codex limit for polar compounds, and the national ones disagree (Italy and Spain 25%, Switzerland 27%, no legal limit at all in the UK, Ireland, the USA or Canada). |
 | **Thermal Cooking Calculator** | Ramp and hold times from the Choi-Okos model and Bigelow pathogen kinetics, 6-log reduction, 1073 food profiles. |
-| **Lipid Science Database** | ~300 fats and oils: smoke point, safe temperature, crystallisation, density, fatty-acid profile, oxidation risk, allergens. |
+| **Lipid Science Database** | 148 fats and oils: smoke point, safe temperature, crystallisation, density, fatty-acid profile, oxidation risk, allergens. |
 | **Physical Screen Ruler** | DPI-calibrated ruler in cm and inches. |
 
 <p align="center">
   <img src="screenshots/cost.png" width="200">
   <img src="screenshots/fryer.png" width="200">
-  <img src="screenshots/lipid.png" width="200">
+  <img src="screenshots/recipes.png" width="200">
   <img src="screenshots/thermal.png" width="200">
+  <img src="screenshots/lipid.png" width="200">
 </p>
 
 ---
