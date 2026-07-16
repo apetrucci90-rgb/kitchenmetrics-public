@@ -50,9 +50,9 @@ not taken from a review paper. A citation without a consultation date is worth l
 | Chile | 25% | statutory | **Reglamento Sanitario de los Alimentos (D.S. 977/96) art. 266 let. c** | ✅ **2026-07-16** (consolidation to Aug 2017 — see caveat below) |
 | Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) | ⏳ query sent to COFEPRIS **2026-07-16** |
 | United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice | ⏳ **FOI request** (Freedom of Information Act 2000) sent to the FSA **2026-07-16** — statutory reply due within 20 working days |
-| Ireland | 25%* | no statutory limit | FSAI; *industry benchmark | ✗ literature only |
+| Ireland | 25%* | no statutory limit | FSAI; *industry benchmark | ⏳ query sent to the FSAI Advice Line **2026-07-16** |
 | United States | 25%* | no statutory limit | No federal TPC limit **found** (FDA); *voluntary benchmark, some states differ | ⏳ query sent to the FDA (FCIC/FSMA TAN, form 3907, category *Retail Food*) **2026-07-16** |
-| Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ✗ literature only |
+| Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ⏳ query sent to the CFIA **2026-07-16** |
 | Australia | 27% | disputed | Reviews cite 27%; industry says TPM is not a legal limit — confirm with state regulator | ⏳ query sent to FSANZ **2026-07-16** |
 | New Zealand | 25%* | no statutory limit | FSANZ Food Standards Code; *industry benchmark | ⏳ covered by the FSANZ query **2026-07-16** |
 
