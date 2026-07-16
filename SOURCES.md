@@ -34,7 +34,7 @@ ceiling; a jurisdiction can only ever tighten the threshold, never relax it.
 | Switzerland | 27% | statutory | **ODOV/VLpH art. 6 para. 4** — DFI Ordinance of 16.12.2016 (RS 817.022.17) |
 | Spain | 25% | statutory | Orden de 26 de enero de 1989 (BOE-A-1989-2265) |
 | Argentina | 25% | statutory | Código Alimentario Argentino art. 552 bis (Res. Conjunta 17/2021); method ISO 8420 |
-| Chile | 25% | statutory | Reglamento Sanitario de los Alimentos (D.S. 977/96) |
+| Chile | 25% | statutory | **Reglamento Sanitario de los Alimentos (D.S. 977/96) art. 266 let. c** |
 | Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) |
 | United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice |
 | Ireland | 25%* | no statutory limit | FSAI; *industry benchmark |
@@ -57,6 +57,17 @@ registry above**, because no primary legal text has been established for it.
 **A clarification has been requested directly from the DGF** (16 July 2026); their Managing
 Director confirmed receipt and forwarded the question to their experts. This document will be
 updated with their answer. Until then the app calls 24% a *reference figure*, never a *limit*.
+
+### Chile — primary text read, and it says more than we model
+
+Art. 266 of the RSA sets **three** limits, any one of which condemns the oil:
+*"a) acidez libre expresada como ácido oléico superior al 2,5%; b) punto de humo inferior a
+170 ºC; c) 25% de compuestos polares como máximo."* Art. 265 caps linolenic acid at 2% for
+industrial/institutional frying; art. 267 bans reusing discarded frying oil in other human food.
+**KitchenMetrics currently models only the 25%** — an honest gap, not a claim.
+Note the wording *"aceites y **mantecas**"*: Chile covers animal fats explicitly.
+*Version read: consolidation to August 2017; post-2017 amendments not checked, and article
+numbering shifts between consolidations — verify on [BCN](https://www.bcn.cl/leychile/navegar?idNorma=71271).*
 
 ### Switzerland — primary text read
 
