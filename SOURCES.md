@@ -44,12 +44,19 @@ not taken from a review paper. A citation without a consultation date is worth l
 | Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) | ✗ literature only |
 | United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice | ✗ literature only |
 | Ireland | 25%* | no statutory limit | FSAI; *industry benchmark | ✗ literature only |
-| United States | 25%* | no statutory limit | FDA sets none; *voluntary benchmark, some states differ | ✗ literature only |
+| United States | 25%* | no statutory limit | No federal TPC limit **found** (FDA); *voluntary benchmark, some states differ | ✗ literature only |
 | Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ✗ literature only |
 | Australia | 27% | disputed | Reviews cite 27%; industry says TPM is not a legal limit — confirm with state regulator | ⏳ query sent to FSANZ **2026-07-16** |
 | New Zealand | 25%* | no statutory limit | FSANZ Food Standards Code; *industry benchmark | ⏳ covered by the FSANZ query **2026-07-16** |
 
-**Explicitly no TPC limit:** European Union / EFSA, US FDA, Codex Alimentarius.
+**No TPC limit found for:** the European Union / EFSA, the US FDA, and Codex Alimentarius.
+
+*The wording matters. "No limit found" is what the evidence supports; "sets no limit" asserts a
+fact about a body's entire corpus, which nobody here has exhaustively searched. The app used to
+mark the US claim as verified against the primary legal text — for a claim that no such text
+exists. An absence cannot be read; it can only be attested by the body itself, and none has been
+asked. Where a negative is only ever "widely repeated and never contradicted", this document says
+so.*
 
 ### Germany's 24% — a recommendation, not (as far as established) a statute
 

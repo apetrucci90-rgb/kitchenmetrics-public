@@ -34,6 +34,19 @@ the next build.
   last acceptable value. The arithmetic had always treated the threshold as inclusive; only the
   sentence a cook reads was a hair too generous.
 
+- **An absence can no longer be marked "official".** The registry's `confidence` field — the one
+  that records whether anyone actually checked a claim — defined `official` as *"checked against
+  the primary legal text"*. The United States sat at `official` for the claim that **no such text
+  exists**. You cannot read a text that does not exist: nothing had been read, because there was
+  nothing to read. It is now `literature`, and the basis says what is true — *"no federal TPC
+  limit **found**"*, rather than asserting the FDA has set none.
+  The taxonomy now states the distinction plainly: a positive claim is established by **reading**
+  a text; an absence must be **attested** by the body itself. There is deliberately no confidence
+  value for an attested absence yet — if FSANZ or the DGF answer with one, it will be added as a
+  deliberate act with the reply archived, rather than by stretching `official` over it again.
+  *`confidence` was also the only field in the registry with no test: 35 assertions were added,
+  and mutation-checked by reintroducing the bug to confirm they catch it.*
+
 - **Spain's registry note was backwards and is corrected.** It claimed the law *"bans selling food
   that touched oil at 25% TPC or above — the offence is the dish, not the fryer"*. The primary text
   says the opposite: art. 3 binds whoever uses and handles heated frying oils, art. 6.3 requires
