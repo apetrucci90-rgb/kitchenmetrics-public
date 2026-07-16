@@ -16,9 +16,11 @@ ogni dato alla sua origine, così che chiunque — cuoco, revisore IT o ispettor
 verificarlo in autonomia.*
 
 Last reviewed: **16 July 2026**. On that date four primary legal texts were read directly
-(Switzerland, Spain, Argentina, Chile) and three clarification requests were sent to the bodies
-that own the remaining figures (Italy's Ministry of Health, Germany's DGF, FSANZ). Each entry below
-carries the date it was checked, and pending requests are marked ⏳ rather than assumed.
+(Switzerland, Spain, Argentina, Chile) and four clarification requests were sent to the bodies that
+own the remaining figures — Italy's Ministry of Health (DGISAN), Germany's DGF, FSANZ, and the US
+FDA. Each entry below carries the date it was checked, and pending requests are marked ⏳ rather
+than assumed. **A pending request is not an answer**, and this table will not pretend otherwise
+until the replies arrive.
 
 ---
 
@@ -44,7 +46,7 @@ not taken from a review paper. A citation without a consultation date is worth l
 | Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) | ✗ literature only |
 | United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice | ✗ literature only |
 | Ireland | 25%* | no statutory limit | FSAI; *industry benchmark | ✗ literature only |
-| United States | 25%* | no statutory limit | No federal TPC limit **found** (FDA); *voluntary benchmark, some states differ | ✗ literature only |
+| United States | 25%* | no statutory limit | No federal TPC limit **found** (FDA); *voluntary benchmark, some states differ | ⏳ query sent to the FDA (FCIC/FSMA TAN, form 3907, category *Retail Food*) **2026-07-16** |
 | Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ✗ literature only |
 | Australia | 27% | disputed | Reviews cite 27%; industry says TPM is not a legal limit — confirm with state regulator | ⏳ query sent to FSANZ **2026-07-16** |
 | New Zealand | 25%* | no statutory limit | FSANZ Food Standards Code; *industry benchmark | ⏳ covered by the FSANZ query **2026-07-16** |
