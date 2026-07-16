@@ -32,8 +32,8 @@ ceiling; a jurisdiction can only ever tighten the threshold, never relax it.
 |---|---|---|---|
 | Italy | 25% | statutory | Ministry of Health Circular no. 1 of 11/01/1991 |
 | Switzerland | 27% | statutory | **ODOV/VLpH art. 6 para. 4** — DFI Ordinance of 16.12.2016 (RS 817.022.17) |
-| Spain | 25% | statutory | Orden de 26 de enero de 1989 (BOE-A-1989-2265) |
-| Argentina | 25% | statutory | Código Alimentario Argentino art. 552 bis (Res. Conjunta 17/2021); method ISO 8420 |
+| Spain | 25% | statutory | **Orden de 26 de enero de 1989, art. 6.3** (BOE-A-1989-2265) |
+| Argentina | 25% | statutory | **Código Alimentario Argentino art. 552 bis** (Res. Conjunta 17/2021); method ISO 8420:2002 |
 | Chile | 25% | statutory | **Reglamento Sanitario de los Alimentos (D.S. 977/96) art. 266 let. c** |
 | Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) |
 | United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice |
@@ -57,6 +57,29 @@ registry above**, because no primary legal text has been established for it.
 **A clarification has been requested directly from the DGF** (16 July 2026); their Managing
 Director confirmed receipt and forwarded the question to their experts. This document will be
 updated with their answer. Until then the app calls 24% a *reference figure*, never a *limit*.
+
+### ⚠️ The number is never the whole law
+
+Four primary texts were read on 16 July 2026, and every one of them pairs the polar-compound
+figure with a **sensory test** — several add more criteria still:
+
+| Jurisdiction | What the law actually requires |
+|---|---|
+| **Spain** (art. 6) | 6.1 free of substances foreign to frying · 6.2 organoleptic characters must not taint the food · **6.3 polar components below 25%** |
+| **Argentina** (art. 552 bis) | *(a)* alterations in **smell or taste** — listed **first**, and joined by "y/o", so it condemns the oil on its own — *and/or* *(b)* **TPC ≥ 25%** |
+| **Chile** (art. 266) | *(a)* free acidity > 2.5% · *(b)* smoke point < 170 °C · *(c)* **polar compounds > 25%** |
+| **Germany** (DGF) | sensory findings *"im Vordergrund"*, plus polymeric triglycerides (12%), **polar compounds (24%)** and acid value (2%) |
+
+**KitchenMetrics models the polar-compound figure only.** That is stated here rather than
+glossed over — and it is not, on reflection, a weakness: the TPC number is precisely the leg of
+the stool a cook *cannot* judge by eye, which is why an instrument is worth having. But the app
+does not replace looking at, smelling and tasting the oil, and in Spain, Argentina and Chile the
+number alone does not decide compliance.
+
+**Threshold wording:** Spain requires the content to be *"inferior al 25 por 100"* and Argentina
+condemns oil at *"igual o superior al 25 %"* — so **25.0% is already non-compliant**, not the last
+acceptable value. The app's arithmetic always treated the threshold as inclusive; its wording was
+corrected on 2026-07-16 from "discard when TPC *exceeds* X%" to "**discard at or above X%**".
 
 ### Chile — primary text read, and it says more than we model
 
