@@ -1,0 +1,227 @@
+# KitchenMetrics — Developer Brief / Presentazione Tecnica
+
+**Andrea Petrucci · July 2026 · EN + IT**
+
+🇬🇧 English below · 🇮🇹 [Versione italiana più in basso](#-versione-italiana)
+
+---
+
+# 🇬🇧 English
+
+## What it is
+
+KitchenMetrics is an Android app for professional kitchens: dish costing, deep-fryer oil
+safety, cook-time estimation, a fat/oil reference database, and a recipe book that re-costs
+itself when ingredient prices change. Five tools, three languages (EN/IT/ES), fully offline.
+
+It exists because I cook for a living and none of the existing apps model how a kitchen
+actually works — most food-cost calculators, for example, apply a single "yield" percentage,
+when in reality there are two sequential ones (butchering yield AP→EP, then cooking loss
+EP→plated) and conflating them systematically under-prices dishes.
+
+**Status:** live on Google Play in closed testing since 15 July 2026
+(`com.kitchenmetrics.app`, targetSdk 36, minSdk 26, ~2.4 MB AAB, Play App Signing).
+
+**The journey, for context:** two and a half months ago this was a Python exercise written
+while learning to program. It grew into a web app, then an Android app, then a signed release
+on Google Play — built by a working cook, with AI assistants as tutors and reviewers, and
+every formula and legal limit verified against published sources. This document describes
+what came out the other end, developer to developer.
+
+## Architecture
+
+- **Kotlin WebView shell + vanilla JS application.** No framework, no build step for the JS.
+  The shell provides a `@JavascriptInterface` bridge for the two things a WebView can't do:
+  persistence (SharedPreferences) and printing. Everything else is plain HTML/CSS/JS in `assets/`.
+- **Deliberately classic scripts, not ES modules.** The markup wires its buttons with inline
+  `onclick` handlers that resolve against global scope; `type="module"` would silently break
+  all of them. A smoke-test suite exists specifically to catch that class of failure.
+- **One store abstraction** (`core.js`): AndroidBridge → SharedPreferences on device,
+  `localStorage` fallback in a browser. The whole app runs unchanged in desktop Chrome,
+  which is where most development and testing happens.
+- **i18n at runtime** from dictionary files (EN base, IT/ES overlays), including the
+  148-entry fat database. Food names are deliberately *not* machine-translated: the allergen
+  field hangs off the name, so a mistranslation is a safety bug, not a typo. Translated fat
+  labels keep the English name alongside ("Strutto (Lard)") for the same reason.
+
+## The domain layer is the point
+
+The interesting work is in the models, and each one is sourced:
+
+- **Costing** follows the USAR (Uniform System of Accounts for Restaurants) shape: two yields
+  in sequence, energy cost via device power × load factor, ratios computed against net (ex-VAT)
+  revenue, mutually exclusive pricing methods.
+- **Cook-time estimation** solves the transient-conduction problem with a finite Biot number
+  (eigenvalue bisection) and Choi–Okos composition-based thermal properties over 1,073 food
+  profiles. The naive Bi→∞ shortcut — which several published calculators use — under-predicts
+  cook time up to 3.4× in the unsafe direction; that bug existed here too and is now pinned by
+  a regression benchmark. A sanity gate refuses to output if any derived property (ρ, cp, k, α)
+  goes non-physical.
+- **Fryer safety** compares oil degradation against a per-country registry of statutory TPC
+  limits (24% DE, 25% IT/ES/FR, 27% CH, explicitly *none* in UK/US/CA…), each entry carrying
+  its named legal basis. The app always applies the stricter of the oil's chemistry limit and
+  the local law. This registry appears to be unique in the category — competitors cite
+  "EFSA/FDA thresholds" that, on verification, don't exist (neither body sets any TPC limit).
+- **Fat database**: 148 records with smoke points, composition and allergens, single audited
+  source of truth; a second registry that consumes it is test-pinned to agree with it.
+
+## Testing
+
+3,012 assertions across six suites, all green, run after every change:
+
+| Suite | Assertions | Guards |
+|---|---|---|
+| cost_engine | 31 | costing model + regression pins for 6 fixed bugs |
+| smoke | 64 | app wiring; asserts the harness script list matches `index.html` |
+| i18n | 1,844 | key parity, duplicate keys (silently dropped by JS object literals) |
+| db_i18n | 920 | fat DB translation coverage + cross-registry agreement |
+| tpc_limits | 138 | legal registry integrity per jurisdiction |
+| vault | 15 | per-client data scoping (cross-contamination regression) |
+
+Browser suites run headless in Chrome; module suites run on Node. The smoke suite reads the
+app's real `index.html` script list instead of keeping its own copy — a harness that
+duplicates the app's wiring stays green while the app is broken, which happened once and
+won't again.
+
+## Privacy as a build property
+
+The app requests **zero permissions** and has **no INTERNET permission** — the privacy claim
+is enforced by the OS, not promised by a policy. An earlier USDA nutrition lookup was removed
+after concluding it couldn't scale (per-key rate limit shared by all installs) and couldn't
+keep its API key secret client-side; the embedded Choi–Okos profiles already carried the same
+data. No account, no ads, no analytics. Data Safety declaration is trivially true.
+
+## Things I'd fix next (known, documented, open)
+
+- The fryer's cumulative TPC *prediction* model is self-contradictory (temperature factor
+  applied in one term, ignored in another; batch TPC displayed but never accumulated). It
+  errs unsafe-visible (oil looks fresher than it is), so it's deliberately kept **off** the
+  storefront until replaced with a proper Arrhenius model. The per-country legal *limits* it
+  compares against are correct and shipped.
+- The energy load-factor default (0.45) is the one number in the app without a source;
+  a plug meter will settle it.
+- PDF export (offscreen WebView → PrintManager, since `window.print()` is a no-op in a
+  WebView) is verified on the emulator but not yet across OEM print stacks.
+
+## Links
+
+- Public docs & live demo of the lipid database:
+  https://github.com/apetrucci90-rgb/kitchenmetrics-public
+- Closed-test opt-in (Android, on request — Google requires named testers):
+  https://play.google.com/apps/testing/com.kitchenmetrics.app
+- Private source available on request.
+
+---
+
+# 🇮🇹 Versione italiana
+
+## Cos'è
+
+KitchenMetrics è un'app Android per cucine professionali: food cost dei piatti, sicurezza
+dell'olio di frittura, stima dei tempi di cottura, un database di riferimento di grassi e oli,
+e un ricettario che ricalcola i costi da solo quando cambia il prezzo di un ingrediente.
+Cinque strumenti, tre lingue (EN/IT/ES), completamente offline.
+
+Esiste perché cucino di mestiere e nessuna delle app esistenti modella come funziona davvero
+una cucina — la maggior parte dei calcolatori di food cost, per esempio, applica una singola
+percentuale di "resa", quando in realtà le rese sono due e in sequenza (resa di lavorazione
+AP→EP, poi calo di cottura EP→piatto servito) e confonderle porta sistematicamente a
+sottoprezzare i piatti.
+
+**Stato:** su Google Play in closed testing dal 15 luglio 2026
+(`com.kitchenmetrics.app`, targetSdk 36, minSdk 26, AAB ~2,4 MB, Play App Signing).
+
+**Il percorso, per contesto:** due mesi e mezzo fa questo era un esercizio Python scritto
+mentre imparavo a programmare. È diventato una web app, poi un'app Android, poi una release
+firmata su Google Play — costruita da un cuoco in attività, con le AI come tutor e revisori,
+e ogni formula e limite di legge verificati su fonti pubblicate. Questo documento descrive
+cosa è uscito dall'altra parte, da sviluppatore a sviluppatore.
+
+## Architettura
+
+- **Shell Kotlin con WebView + applicazione in JavaScript vanilla.** Nessun framework, nessuno
+  step di build per il JS. La shell espone un bridge `@JavascriptInterface` per le due sole cose
+  che una WebView non sa fare: persistenza (SharedPreferences) e stampa. Tutto il resto è
+  HTML/CSS/JS puro dentro `assets/`.
+- **Script classici per scelta deliberata, non moduli ES.** Il markup collega i bottoni con
+  handler `onclick` inline che risolvono nello scope globale; `type="module"` li romperebbe
+  tutti in silenzio. Esiste una suite di smoke test pensata proprio per intercettare quella
+  classe di guasti.
+- **Un'unica astrazione di persistenza** (`core.js`): AndroidBridge → SharedPreferences sul
+  dispositivo, fallback su `localStorage` nel browser. L'intera app gira identica in Chrome
+  desktop, che è dove avviene gran parte di sviluppo e test.
+- **i18n a runtime** da file dizionario (base EN, overlay IT/ES), incluso il database dei 148
+  grassi. I nomi degli alimenti NON vengono tradotti automaticamente, per scelta: il campo
+  allergeni è agganciato al nome, quindi una traduzione sbagliata è un bug di sicurezza, non un
+  refuso. Le etichette tradotte dei grassi mantengono accanto il nome inglese
+  ("Strutto (Lard)") per lo stesso motivo.
+
+## Il punto è il livello di dominio
+
+Il lavoro interessante è nei modelli, e ognuno ha le sue fonti:
+
+- **Il costing** segue lo schema USAR (Uniform System of Accounts for Restaurants): due rese in
+  sequenza, costo energia = potenza del dispositivo × load factor, indici calcolati sul ricavo
+  netto (IVA esclusa), metodi di pricing mutuamente esclusivi.
+- **La stima dei tempi di cottura** risolve il problema di conduzione in transitorio con numero
+  di Biot finito (bisezione degli autovalori) e proprietà termiche composition-based Choi–Okos
+  su 1.073 profili alimentari. La scorciatoia ingenua Bi→∞ — usata da diversi calcolatori
+  pubblicati — sottostima il tempo di cottura fino a 3,4 volte, nella direzione NON sicura;
+  quel bug esisteva anche qui ed è ora bloccato da un benchmark di regressione. Un controllo di
+  sanità rifiuta di produrre output se una proprietà derivata (ρ, cp, k, α) diventa non fisica.
+- **La sicurezza friggitrice** confronta il degrado dell'olio con un registro per paese dei
+  limiti TPC di legge (24% DE, 25% IT/ES/FR, 27% CH, esplicitamente *nessuno* in UK/US/CA…),
+  ogni voce con la sua base legale citata per nome. L'app applica sempre il più severo tra il
+  limite chimico dell'olio e la legge locale. Questo registro risulta unico nella categoria —
+  i concorrenti citano "soglie EFSA/FDA" che, a verifica fatta, non esistono (nessuno dei due
+  enti fissa un limite TPC).
+- **Database dei grassi**: 148 record con punti di fumo, composizione e allergeni, un'unica
+  fonte di verità sottoposta ad audit; un secondo registro che la consuma è vincolato da test
+  a concordare con essa.
+
+## Test
+
+3.012 asserzioni in sei suite, tutte verdi, eseguite dopo ogni modifica:
+
+| Suite | Asserzioni | Cosa protegge |
+|---|---|---|
+| cost_engine | 31 | modello di costing + pin di regressione per 6 bug corretti |
+| smoke | 64 | cablaggio dell'app; verifica che la lista script del harness coincida con `index.html` |
+| i18n | 1.844 | parità delle chiavi, chiavi duplicate (scartate in silenzio dagli object literal JS) |
+| db_i18n | 920 | copertura traduzioni del DB grassi + concordanza tra registri |
+| tpc_limits | 138 | integrità del registro legale per giurisdizione |
+| vault | 15 | isolamento dei dati per cliente (regressione anti-contaminazione) |
+
+Le suite browser girano headless in Chrome; le suite a moduli su Node. La smoke suite legge la
+lista script del VERO `index.html` invece di tenerne una copia propria — un harness che duplica
+il cablaggio dell'app resta verde mentre l'app è rotta: è successo una volta, non succederà più.
+
+## La privacy come proprietà di build
+
+L'app richiede **zero permessi** e non ha il **permesso INTERNET** — la promessa di privacy è
+imposta dal sistema operativo, non dichiarata da una policy. Una precedente lookup nutrizionale
+USDA è stata rimossa dopo aver concluso che non poteva scalare (rate limit per chiave condiviso
+da tutte le installazioni) e non poteva tenere segreta la API key lato client; i profili
+Choi–Okos incorporati contenevano già gli stessi dati. Nessun account, nessuna pubblicità,
+nessuna analytics. La dichiarazione Data Safety è banalmente vera.
+
+## Cosa sistemerei dopo (noto, documentato, aperto)
+
+- Il modello di *previsione* del TPC cumulativo della friggitrice si contraddice (fattore
+  temperatura applicato in un termine, ignorato in un altro; TPC di batch mostrato ma mai
+  accumulato). Sbaglia in direzione visibile-non-sicura (l'olio sembra più fresco di quanto è),
+  quindi è tenuto deliberatamente **fuori** dalla vetrina finché non sarà sostituito da un vero
+  modello di Arrhenius. I *limiti* legali per paese con cui si confronta sono corretti e
+  pubblicati.
+- Il load factor energetico di default (0,45) è l'unico numero dell'app senza fonte;
+  lo sistemerà un misuratore di consumo da presa.
+- L'export PDF (WebView offscreen → PrintManager, perché `window.print()` in una WebView è un
+  no-op) è verificato sull'emulatore ma non ancora sugli stack di stampa dei vari OEM.
+
+## Link
+
+- Documentazione pubblica e demo live del database lipidico:
+  https://github.com/apetrucci90-rgb/kitchenmetrics-public
+- Opt-in al closed test (Android, su richiesta — Google richiede tester nominali):
+  https://play.google.com/apps/testing/com.kitchenmetrics.app
+- Sorgente privato disponibile su richiesta.

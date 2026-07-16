@@ -80,11 +80,20 @@ model · Bigelow pathogen kinetics · Uniform System of Accounts for Restaurants
 
 ## Privacy
 
-No data collection, no analytics, no advertising, no accounts. Everything you type stays on
-your device. The only outbound request is an optional lookup of public food data from the
-USDA, carrying a food identifier and nothing else.
+No data collection, no analytics, no advertising, no accounts. The app requests **zero
+Android permissions — not even INTERNET** — so nothing you type can leave your device:
+the guarantee is enforced by the operating system, not promised by a policy.
 
 **[Privacy Policy](privacy-policy.html)**
+
+---
+
+## For developers
+
+- **[Developer Brief — EN + IT](DEV-BRIEF.md)** — architecture, domain models, test strategy,
+  and the journey from a Python exercise to a signed Play release in two and a half months.
+- **[Engineering Notes](TECHNICAL.md)** — case study of the highest-severity bug found in the
+  pre-release audit (a thermal model wrong in the dangerous direction) and how it was caught.
 
 ---
 
