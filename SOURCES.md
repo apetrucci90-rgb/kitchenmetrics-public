@@ -31,7 +31,7 @@ ceiling; a jurisdiction can only ever tighten the threshold, never relax it.
 | Country | Limit | Status | Legal basis (as cited in-app) |
 |---|---|---|---|
 | Italy | 25% | statutory | Ministry of Health Circular no. 1 of 11/01/1991 |
-| Switzerland | 27% | statutory | Swiss federal food legislation (FDHA) |
+| Switzerland | 27% | statutory | **ODOV/VLpH art. 6 para. 4** — DFI Ordinance of 16.12.2016 (RS 817.022.17) |
 | Spain | 25% | statutory | Orden de 26 de enero de 1989 (BOE-A-1989-2265) |
 | Argentina | 25% | statutory | Código Alimentario Argentino art. 552 bis (Res. Conjunta 17/2021); method ISO 8420 |
 | Chile | 25% | statutory | Reglamento Sanitario de los Alimentos (D.S. 977/96) |
@@ -44,6 +44,27 @@ ceiling; a jurisdiction can only ever tighten the threshold, never relax it.
 | New Zealand | 25%* | no statutory limit | FSANZ Food Standards Code; *industry benchmark |
 
 **Explicitly no TPC limit:** European Union / EFSA, US FDA, Codex Alimentarius.
+
+### Germany's 24% — a recommendation, not (as far as established) a statute
+
+The 24% figure widely quoted for Germany — including the "strictest anywhere" figure the app
+displays — originates from the **DGF (Deutsche Gesellschaft für Fettwissenschaft)**, established
+at the *3rd International Symposium on Frying Fats* (2000). German food-control authorities use
+it as an **assessment criterion**, alongside sensory findings, polymeric triglycerides (max. 12%)
+and acid value — not as a single statutory maximum. Germany is deliberately **absent from the
+registry above**, because no primary legal text has been established for it.
+
+**A clarification has been requested directly from the DGF** (16 July 2026); their Managing
+Director confirmed receipt and forwarded the question to their experts. This document will be
+updated with their answer. Until then the app calls 24% a *reference figure*, never a *limit*.
+
+### Switzerland — primary text read
+
+Art. 6 para. 4 of the ODOV/VLpH (RS 817.022.17) reads: *"Der polare Anteil in Speisefetten und
+Speiseölen zum Frittieren darf 27 Prozent nicht übersteigen."* Version in force: 1 January 2026.
+**Open question:** the ordinance's scope (art. 2, art. 1 let. b) covers foodstuffs of **plant**
+origin, and art. 6 sits in the chapter on plant oils and fats — so whether the 27% also binds
+**animal** frying fats (lard, tallow) is not settled by this text. The app does not assume it does.
 
 *Primary source for the registry:* Song et al., "Feasibility of total polar compound ... aspect
 of regulations of various countries," *Food Chemistry* (2022), cross-checked against primary
