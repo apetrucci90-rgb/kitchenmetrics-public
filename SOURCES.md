@@ -16,11 +16,16 @@ ogni dato alla sua origine, così che chiunque — cuoco, revisore IT o ispettor
 verificarlo in autonomia.*
 
 Last reviewed: **16 July 2026**. On that date four primary legal texts were read directly
-(Switzerland, Spain, Argentina, Chile) and four clarification requests were sent to the bodies that
-own the remaining figures — Italy's Ministry of Health (DGISAN), Germany's DGF, FSANZ, and the US
-FDA. Each entry below carries the date it was checked, and pending requests are marked ⏳ rather
-than assumed. **A pending request is not an answer**, and this table will not pretend otherwise
-until the replies arrive.
+(Switzerland, Spain, Argentina, Chile) and **six clarification requests** were sent to the bodies
+that own the remaining figures: Italy's Ministry of Health (DGISAN), Germany's DGF, FSANZ, the US
+FDA, the UK's FSA (as a Freedom of Information request) and Mexico's COFEPRIS.
+
+Every request asks the same thing and refuses to ask anything else: **whether the norm exists and
+what it says**. None asks for an assessment, endorsement or approval of the application — no public
+body certifies calculation software, and asking would only earn a refusal worth quoting against us.
+
+Each entry below carries the date it was checked. **A pending request is not an answer**, and this
+table will not pretend otherwise until the replies arrive.
 
 ---
 
@@ -43,8 +48,8 @@ not taken from a review paper. A citation without a consultation date is worth l
 | Spain | 25% | statutory | **Orden de 26 de enero de 1989, art. 6.3** (BOE-A-1989-2265) | ✅ **2026-07-16** (boe.es) |
 | Argentina | 25% | statutory | **Código Alimentario Argentino art. 552 bis** (Res. Conjunta 17/2021); method ISO 8420:2002 | ✅ **2026-07-16** (boletinoficial.gob.ar) |
 | Chile | 25% | statutory | **Reglamento Sanitario de los Alimentos (D.S. 977/96) art. 266 let. c** | ✅ **2026-07-16** (consolidation to Aug 2017 — see caveat below) |
-| Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) | ✗ literature only |
-| United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice | ✗ literature only |
+| Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) | ⏳ query sent to COFEPRIS **2026-07-16** |
+| United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice | ⏳ **FOI request** (Freedom of Information Act 2000) sent to the FSA **2026-07-16** — statutory reply due within 20 working days |
 | Ireland | 25%* | no statutory limit | FSAI; *industry benchmark | ✗ literature only |
 | United States | 25%* | no statutory limit | No federal TPC limit **found** (FDA); *voluntary benchmark, some states differ | ⏳ query sent to the FDA (FCIC/FSMA TAN, form 3907, category *Retail Food*) **2026-07-16** |
 | Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ✗ literature only |
