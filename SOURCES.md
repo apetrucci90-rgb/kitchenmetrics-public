@@ -15,7 +15,10 @@ nazionale, uno standard internazionale o la letteratura scientifica. Questo docu
 ogni dato alla sua origine, così che chiunque — cuoco, revisore IT o ispettore — possa
 verificarlo in autonomia.*
 
-Last reviewed: 2026-07-16.
+Last reviewed: **16 July 2026**. On that date four primary legal texts were read directly
+(Switzerland, Spain, Argentina, Chile) and three clarification requests were sent to the bodies
+that own the remaining figures (Italy's Ministry of Health, Germany's DGF, FSANZ). Each entry below
+carries the date it was checked, and pending requests are marked ⏳ rather than assumed.
 
 ---
 
@@ -28,20 +31,23 @@ a non-existent threshold in a HACCP tool is something an inspector can falsify o
 The app always applies the **stricter** of the fat's own chemistry limit and the local legal
 ceiling; a jurisdiction can only ever tighten the threshold, never relax it.
 
-| Country | Limit | Status | Legal basis (as cited in-app) |
-|---|---|---|---|
-| Italy | 25% | statutory | Ministry of Health Circular no. 1 of 11/01/1991 |
-| Switzerland | 27% | statutory | **ODOV/VLpH art. 6 para. 4** — DFI Ordinance of 16.12.2016 (RS 817.022.17) |
-| Spain | 25% | statutory | **Orden de 26 de enero de 1989, art. 6.3** (BOE-A-1989-2265) |
-| Argentina | 25% | statutory | **Código Alimentario Argentino art. 552 bis** (Res. Conjunta 17/2021); method ISO 8420:2002 |
-| Chile | 25% | statutory | **Reglamento Sanitario de los Alimentos (D.S. 977/96) art. 266 let. c** |
-| Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) |
-| United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice |
-| Ireland | 25%* | no statutory limit | FSAI; *industry benchmark |
-| United States | 25%* | no statutory limit | FDA sets none; *voluntary benchmark, some states differ |
-| Canada | 25%* | no statutory limit | CFIA; *industry benchmark |
-| Australia | 27% | disputed | Reviews cite 27%; industry says TPM is not a legal limit — confirm with state regulator |
-| New Zealand | 25%* | no statutory limit | FSANZ Food Standards Code; *industry benchmark |
+Where the "read" column is ticked, the primary legal text was consulted directly on the date shown,
+not taken from a review paper. A citation without a consultation date is worth little: laws change.
+
+| Country | Limit | Status | Legal basis (as cited in-app) | Primary text read |
+|---|---|---|---|---|
+| Italy | 25% | statutory | Ministry of Health Circular no. 1 of 11/01/1991 | ⏳ vigency query sent to the Ministry (DGISAN) **2026-07-16** |
+| Switzerland | 27% | statutory | **ODOV/VLpH art. 6 para. 4** — DFI Ordinance of 16.12.2016 (RS 817.022.17) | ✅ **2026-07-16** (Fedlex; version in force 01.01.2026) |
+| Spain | 25% | statutory | **Orden de 26 de enero de 1989, art. 6.3** (BOE-A-1989-2265) | ✅ **2026-07-16** (boe.es) |
+| Argentina | 25% | statutory | **Código Alimentario Argentino art. 552 bis** (Res. Conjunta 17/2021); method ISO 8420:2002 | ✅ **2026-07-16** (boletinoficial.gob.ar) |
+| Chile | 25% | statutory | **Reglamento Sanitario de los Alimentos (D.S. 977/96) art. 266 let. c** | ✅ **2026-07-16** (consolidation to Aug 2017 — see caveat below) |
+| Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) | ✗ literature only |
+| United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice | ✗ literature only |
+| Ireland | 25%* | no statutory limit | FSAI; *industry benchmark | ✗ literature only |
+| United States | 25%* | no statutory limit | FDA sets none; *voluntary benchmark, some states differ | ✗ literature only |
+| Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ✗ literature only |
+| Australia | 27% | disputed | Reviews cite 27%; industry says TPM is not a legal limit — confirm with state regulator | ⏳ query sent to FSANZ **2026-07-16** |
+| New Zealand | 25%* | no statutory limit | FSANZ Food Standards Code; *industry benchmark | ⏳ covered by the FSANZ query **2026-07-16** |
 
 **Explicitly no TPC limit:** European Union / EFSA, US FDA, Codex Alimentarius.
 

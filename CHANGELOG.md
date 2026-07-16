@@ -8,13 +8,13 @@ Dates are the date of the work, not of the Play rollout.
 
 ---
 
-## [Unreleased]
+## [Unreleased] — 2026-07-16
 
 Everything in this section is **committed but not yet built into a release**. Version 1.0
 (versionCode 3) was submitted for review on 15 July 2026 and is frozen; these changes will ship in
 the next build.
 
-### Changed — the fryer no longer states more than the law does
+### Changed — the fryer no longer states more than the law does *(2026-07-16)*
 
 - **Germany's 24% is no longer called a limit.** It was the only country figure in the app quoted
   without a status and without a legal basis, while all twelve registry entries carry both — and
@@ -40,7 +40,7 @@ the next build.
   the oil **in use** to be below 25%, and art. 9.2 prohibits commercialising the used **oil**. The
   offence is the fryer.
 
-### Added
+### Added *(2026-07-16)*
 
 - **Geometry selector in the Thermal Calculator — slab, cylinder or sphere.** A whole chicken is
   not an infinite slab. The eigenvalue λ₁, the coefficient A₁ and the characteristic length now
@@ -63,14 +63,14 @@ the next build.
   and not the act. Chile: RSA **art. 266 let. c** (D.S. 977/96). Spain: **art. 6.3**
   (BOE-A-1989-2265). Each was read in the primary text, not taken from a review paper.
 
-### Removed
+### Removed *(2026-07-16)*
 
 - **The phantom Prime Cost % in Ingredient mode.** With no labour input the figure counted food
   only, so labelling it *"Prime Cost % (USAR · target < 65%)"* stated something it wasn't. The row
   is now omitted rather than shown under a warning: a warning under a wrong number still leaves the
   wrong number on screen, and the number is what a chef reads.
 
-### Documented
+### Documented *(2026-07-16)*
 
 - **[SOURCES.md](SOURCES.md)** — every figure the app prints, mapped to its published origin, plus
   an honest list of what is *estimated* rather than sourced.
