@@ -99,6 +99,8 @@ honest list of what is *estimated* rather than sourced. Verify anything; don't t
 
 ## For developers
 
+- **[Changelog](CHANGELOG.md)** — what shipped in 1.0, and what has changed since. Most entries are
+  corrections, recorded with the reason: a correction without its reason teaches nobody anything.
 - **[Developer Brief — EN + IT](DEV-BRIEF.md)** — architecture, domain models, test strategy,
   and the journey from a Python exercise to a signed Play release in two and a half months.
 - **[Engineering Notes](TECHNICAL.md)** — case study of the highest-severity bug found in the
