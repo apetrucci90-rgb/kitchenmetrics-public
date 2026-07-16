@@ -1,0 +1,134 @@
+# KitchenMetrics — Sources / Fonti
+
+Every number KitchenMetrics prints is traceable to a published source: a national
+regulation, an international standard, or the peer-reviewed literature. This document maps
+each figure to its origin so that **anyone — a chef, an IT reviewer, a food-safety inspector —
+can verify it independently**, without taking the app's word for anything.
+
+> **This is not a certification.** No public body certifies calculation apps on request.
+> What this document offers is stronger than a badge: full traceability. The app cites the
+> source; you check the source. Where a figure is an estimate rather than a regulation, it is
+> labelled as such — see *Honest limitations* at the end.
+
+*Ogni valore stampato da KitchenMetrics è riconducibile a una fonte pubblicata: una norma
+nazionale, uno standard internazionale o la letteratura scientifica. Questo documento collega
+ogni dato alla sua origine, così che chiunque — cuoco, revisore IT o ispettore — possa
+verificarlo in autonomia.*
+
+Last reviewed: 2026-07-16.
+
+---
+
+## 1. Deep-fryer oil — statutory TPC discard limits
+
+Total Polar Compounds (TPC) limits are **national, and they disagree**. There is **no** EU,
+EFSA, FDA or Codex Alimentarius limit — a claim the app deliberately corrects, because citing
+a non-existent threshold in a HACCP tool is something an inspector can falsify on the spot.
+
+The app always applies the **stricter** of the fat's own chemistry limit and the local legal
+ceiling; a jurisdiction can only ever tighten the threshold, never relax it.
+
+| Country | Limit | Status | Legal basis (as cited in-app) |
+|---|---|---|---|
+| Italy | 25% | statutory | Ministry of Health Circular no. 1 of 11/01/1991 |
+| Switzerland | 27% | statutory | Swiss federal food legislation (FDHA) |
+| Spain | 25% | statutory | Orden de 26 de enero de 1989 (BOE-A-1989-2265) |
+| Argentina | 25% | statutory | Código Alimentario Argentino art. 552 bis (Res. Conjunta 17/2021); method ISO 8420 |
+| Chile | 25% | statutory | Reglamento Sanitario de los Alimentos (D.S. 977/96) |
+| Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) |
+| United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice |
+| Ireland | 25%* | no statutory limit | FSAI; *industry benchmark |
+| United States | 25%* | no statutory limit | FDA sets none; *voluntary benchmark, some states differ |
+| Canada | 25%* | no statutory limit | CFIA; *industry benchmark |
+| Australia | 27% | disputed | Reviews cite 27%; industry says TPM is not a legal limit — confirm with state regulator |
+| New Zealand | 25%* | no statutory limit | FSANZ Food Standards Code; *industry benchmark |
+
+**Explicitly no TPC limit:** European Union / EFSA, US FDA, Codex Alimentarius.
+
+*Primary source for the registry:* Song et al., "Feasibility of total polar compound ... aspect
+of regulations of various countries," *Food Chemistry* (2022), cross-checked against primary
+legal texts where marked `official` in the app (`tpc_limits.js`).
+
+**How to verify:** each `basis` string above is a searchable legal reference. `BOE-A-1989-2265`
+resolves on boe.es; the Italian Circular is citable to the Ministero della Salute; the Argentine
+article is in the Código Alimentario Argentino online.
+
+---
+
+## 2. Fat & oil database (148 entries)
+
+Smoke point, safe frying temperature, crystallisation, density, fatty-acid composition,
+oxidation risk and allergens for 148 fats and oils. **Each record carries its own `src` field** —
+the database is a single audited source of truth, and a second registry that consumes it is
+test-pinned to agree with it.
+
+Sources cited across the records include:
+- **USDA FoodData Central** and USDA Agricultural Research Service (composition, density)
+- **International Olive Council (IOC)** (olive oils)
+- **AOCS — American Oil Chemists' Society** Lipid Library (refined seed/nut oils)
+- **Malaysian Palm Oil Board (MPOB)**, **FAO**, and peer-reviewed journals (*Journal of the
+  American Oil Chemists' Society*, *Food Chemistry*, *Journal of Food Composition and Analysis*,
+  *European Journal of Lipid Science and Technology*, and others)
+- **McGee, *On Food and Cooking*** (2004) for several traditional animal fats
+
+**Allergen policy:** allergen labels are never machine-translated, because the allergen hangs
+off the food's name; a mistranslation would be a safety bug, not a typo. Translated fat names
+keep the English original alongside (e.g. "Strutto (Lard)") for the same reason.
+
+---
+
+## 3. Cooking-time / pasteurisation model (thermal)
+
+Cook and pasteurisation times are computed from **transient heat-conduction physics**, not
+lookup tables:
+
+- **Choi–Okos thermophysical model** — composition-based density, specific heat, conductivity
+  and thermal diffusivity across 1,073 food profiles.
+- **Finite Biot number** (eigenvalue found by bisection of `λ·tan(λ) = Bi`) — *not* the naïve
+  Bi→∞ shortcut, which under-predicts cook time up to 3.4× in the **unsafe** direction. A sanity
+  gate refuses to output if any derived property goes non-physical, and flags results where the
+  one-term series itself stops being valid (Fo < 0.2).
+- **Bigelow pathogen kinetics** — log-reduction / D- and z-value model for the lethality target.
+
+**Regulatory / standards references cited in-app:**
+- USDA FSIS **9 CFR 318 / 381** (pathogen lethality performance standards)
+- **EFSA BIOHAZ Panel** (target log-reduction guidance)
+- **FDA Food Code 2022**
+- **EU 853/2004**
+- USDA FoodData Central (source composition data)
+
+---
+
+## 4. Food costing model
+
+Aligned with the **Uniform System of Accounts for Restaurants (USAR)**, published by the
+National Restaurant Association. (There is no ISO/IEC standard for food costing.)
+
+- **Two yields in sequence** — butchering yield (AP→EP) then cooking loss (EP→plated).
+  Conflating them undercosts every cooked item.
+- **Ratios measured on net (ex-VAT) revenue** — VAT is collected for the state, not earned.
+- **Prime Cost %** is the USAR headline figure (target < 65%).
+
+The engine is a pure function with a public regression test suite (`cost_engine.test.html`).
+
+---
+
+## 5. Honest limitations (what is *not* sourced)
+
+Transparency cuts both ways. These figures are estimates, and the app says so:
+
+- **Energy load factor default = 0.45** — the one number in the app with no published source.
+  It is an appliance duty-cycle estimate; measure yours with a plug meter for accuracy.
+- **Industry benchmarks marked with `*`** in the TPC table are *practice*, not law. The app
+  shows them as benchmarks and never presents them as statutory.
+- **Cooking times are physics-based estimates.** Core temperature must always be verified with
+  a probe thermometer. KitchenMetrics supports HACCP decisions; it does not replace the probe,
+  the TPC tester, your kitchen's HACCP plan, or professional judgment.
+
+---
+
+## Independent review — invited
+
+If you work in food science, food-safety regulation, or thermal engineering and want to
+scrutinise any figure here, that scrutiny is welcome — it is exactly how the app's worst bug
+(the thermal model above) was caught. Open an issue on this repository or get in touch.

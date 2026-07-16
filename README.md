@@ -73,8 +73,10 @@ hit — and the price you'd need to recover it.
 
 ## Sources
 
-USDA FoodData Central · USDA FSIS 9 CFR 318/381 · EFSA / FDA · Choi-Okos thermophysical
-model · Bigelow pathogen kinetics · Uniform System of Accounts for Restaurants
+USDA FoodData Central · USDA FSIS 9 CFR 318/381 · EFSA BIOHAZ Panel · FDA Food Code 2022 ·
+EU 853/2004 · Choi-Okos thermophysical model · Bigelow pathogen kinetics · International Olive
+Council · AOCS Lipid Library · Uniform System of Accounts for Restaurants · national TPC
+regulations (see **[SOURCES.md](SOURCES.md)** for the full per-figure mapping)
 
 ---
 
@@ -87,6 +89,13 @@ the guarantee is enforced by the operating system, not promised by a policy.
 **[Privacy Policy](privacy-policy.html)**
 
 ---
+
+## Sources & verification
+
+**[SOURCES.md](SOURCES.md)** maps every figure the app prints to its published origin —
+national regulations for the fryer limits, USDA/IOC/AOCS and peer-reviewed literature for the
+fat database, Choi–Okos and Bigelow for the thermal model, USAR for the costing — plus an
+honest list of what is *estimated* rather than sourced. Verify anything; don't take our word.
 
 ## For developers
 
