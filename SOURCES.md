@@ -16,9 +16,22 @@ ogni dato alla sua origine, così che chiunque — cuoco, revisore IT o ispettor
 verificarlo in autonomia.*
 
 Last reviewed: **16 July 2026**. On that date four primary legal texts were read directly
-(Switzerland, Spain, Argentina, Chile) and **six clarification requests** were sent to the bodies
-that own the remaining figures: Italy's Ministry of Health (DGISAN), Germany's DGF, FSANZ, the US
-FDA, the UK's FSA (as a Freedom of Information request) and Mexico's COFEPRIS.
+(Switzerland, Spain, Argentina, Chile) and **eight clarification requests** were sent to the bodies
+that own the remaining figures:
+
+| Sent (CEST) | Body | Channel |
+|---|---|---|
+| 11:36 | 🇮🇹 Ministry of Health — **DGISAN** | email · vigency of Circular 1/1991 |
+| 12:37 | 🇩🇪 **DGF** — Deutsche Gesellschaft für Fettwissenschaft | email · **replied the same day**: forwarded to their experts |
+| 14:07 | 🇲🇽 **COFEPRIS** | email |
+| 14:37 | 🇮🇪 **FSAI** | email · Advice Line (staffed by food scientists) |
+| 14:38 | 🇨🇦 **CFIA** | email |
+| 14:48 | 🇬🇧 **FSA** | **FOI request** (Freedom of Information Act 2000) · **acknowledged in 12 minutes** by the Information Governance Manager · statutory reply due within 20 working days |
+| — | 🇺🇸 **FDA** | web form 3907 (FCIC / FSMA Technical Assistance Network), category *Retail Food* |
+| — | 🇦🇺🇳🇿 **FSANZ** | web enquiry form |
+
+*(The two web-form submissions carry no timestamped copy — unlike an email, they leave the sender
+no receipt. Both were submitted the same afternoon.)*
 
 Every request asks the same thing and refuses to ask anything else: **whether the norm exists and
 what it says**. None asks for an assessment, endorsement or approval of the application — no public
@@ -43,16 +56,16 @@ not taken from a review paper. A citation without a consultation date is worth l
 
 | Country | Limit | Status | Legal basis (as cited in-app) | Primary text read |
 |---|---|---|---|---|
-| Italy | 25% | statutory | Ministry of Health Circular no. 1 of 11/01/1991 | ⏳ vigency query sent to the Ministry (DGISAN) **2026-07-16** |
+| Italy | 25% | statutory | Ministry of Health Circular no. 1 of 11/01/1991 | ⏳ vigency query sent to the Ministry (DGISAN) **2026-07-16, 11:36 CEST** |
 | Switzerland | 27% | statutory | **ODOV/VLpH art. 6 para. 4** — DFI Ordinance of 16.12.2016 (RS 817.022.17) | ✅ **2026-07-16** (Fedlex; version in force 01.01.2026) |
 | Spain | 25% | statutory | **Orden de 26 de enero de 1989, art. 6.3** (BOE-A-1989-2265) | ✅ **2026-07-16** (boe.es) |
 | Argentina | 25% | statutory | **Código Alimentario Argentino art. 552 bis** (Res. Conjunta 17/2021); method ISO 8420:2002 | ✅ **2026-07-16** (boletinoficial.gob.ar) |
 | Chile | 25% | statutory | **Reglamento Sanitario de los Alimentos (D.S. 977/96) art. 266 let. c** | ✅ **2026-07-16** (consolidation to Aug 2017 — see caveat below) |
-| Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) | ⏳ query sent to COFEPRIS **2026-07-16** |
-| United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice | ⏳ **FOI request** (Freedom of Information Act 2000) sent to the FSA **2026-07-16** — statutory reply due within 20 working days |
-| Ireland | 25%* | no statutory limit | FSAI; *industry benchmark | ⏳ query sent to the FSAI Advice Line **2026-07-16** |
+| Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) | ⏳ query sent to COFEPRIS **2026-07-16, 14:07 CEST** |
+| United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice | ⏳ **FOI request** (Freedom of Information Act 2000) sent to the FSA **2026-07-16, 14:48 CEST** — acknowledged the same day by the FSA's Information Governance Manager; statutory reply due within 20 working days |
+| Ireland | 25%* | no statutory limit | FSAI; *industry benchmark | ⏳ query sent to the FSAI Advice Line **2026-07-16, 14:37 CEST** |
 | United States | 25%* | no statutory limit | No federal TPC limit **found** (FDA); *voluntary benchmark, some states differ | ⏳ query sent to the FDA (FCIC/FSMA TAN, form 3907, category *Retail Food*) **2026-07-16** |
-| Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ⏳ query sent to the CFIA **2026-07-16** |
+| Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ⏳ query sent to the CFIA **2026-07-16, 14:38 CEST** |
 | Australia | 27% | disputed | Reviews cite 27%; industry says TPM is not a legal limit — confirm with state regulator | ⏳ query sent to FSANZ **2026-07-16** |
 | New Zealand | 25%* | no statutory limit | FSANZ Food Standards Code; *industry benchmark | ⏳ covered by the FSANZ query **2026-07-16** |
 

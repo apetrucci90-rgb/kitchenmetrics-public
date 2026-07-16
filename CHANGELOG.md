@@ -83,6 +83,39 @@ the next build.
   is now omitted rather than shown under a warning: a warning under a wrong number still leaves the
   wrong number on screen, and the number is what a chef reads.
 
+### Tested *(2026-07-16)* — the two places that had no net
+
+- **The thermal engine had no tests at all.** It is the part of the app that tells a cook when
+  chicken is safe, and it was the only area without a suite. `thermal_geometry` now pins the
+  eigenvalues, the A₁ coefficients and the Bessel functions with **102 assertions against
+  published tables** — Cengel's one-term approximation (12 λ₁/A₁ pairs at Bi = 0.5/1/5/100 across
+  all three geometries) and Abramowitz & Stegun 9.4.1/9.4.4 for J₀/J₁. The references are
+  deliberately external: *a suite that pins yesterday's numbers only proves the code still does
+  what it did.*
+  It also pins the app's worst historical bug as what it actually was — `A1 = 4/π` and `λ1 = π/2`
+  are asserted to be the **Bi → ∞ limit** of the correct solution (a surface reaching oven
+  temperature instantly), not constants wrong in themselves — and asserts that a real fan oven
+  (Bi ≈ 0.69) sits nowhere near that limit, which is why the fix mattered.
+  Plus invariants no table covers: λ₁ monotonic in Bi and never reaching its ceiling, A₁ positive
+  and bounded, and the ordering **slab > cylinder > sphere** at equal Bi — which is *why* the slab
+  default is the conservative one. If that ever inverts, the default has stopped being safe.
+
+- **`confidence` — the field recording whether anyone actually checked a claim — had no
+  assertions either**, and had rotted exactly where you would expect (see the USA entry above).
+  35 new assertions (138 → 173): every entry carries a known confidence; an `official` statute
+  must cite an article, so a basis naming only the act cannot pass as a citation; no absence and
+  no disputed entry may claim `official`.
+
+- **Both suites were mutation-checked**, because a green suite can be a vacuous one. Re-introducing
+  the USA bug produces `FAIL no absence claims 'official': US`. A 0.25% drift in the sphere's A₁
+  produces 5 failures — including the `A1 ≤ 2` invariant, which the table check alone would have
+  missed. One wrong Bessel coefficient produces 11, cascading into the cylinder's eigenvalue
+  because it solves J₁/J₀.
+
+Suites now: `cost_engine 31 · smoke 64 · i18n 1852 · db_i18n 920 · tpc_limits 173 · vault 15 ·
+thermal_geometry 102`. Still untested: the thermal engine's DOM-coupled half (Choi–Okos
+properties, results panel).
+
 ### Documented *(2026-07-16)*
 
 - **[SOURCES.md](SOURCES.md)** — every figure the app prints, mapped to its published origin, plus
