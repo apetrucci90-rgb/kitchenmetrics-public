@@ -90,6 +90,11 @@ figure with a **sensory test** — several add more criteria still:
 | **Chile** (art. 266) | *(a)* free acidity > 2.5% · *(b)* smoke point < 170 °C · *(c)* **polar compounds > 25%** |
 | **Germany** (DGF) | sensory findings *"im Vordergrund"*, plus polymeric triglycerides (12%), **polar compounds (24%)** and acid value (2%) |
 
+Switzerland's own enforcement laboratory says the same thing from the other direction: the Ticino
+report lists the signs that condemn an oil **with no instrument at all** — rancid or scratchy
+taste, incipient smoking, foaming, viscosity, a pungent smell over the hot fryer. Four laws and
+one regulator, all agreeing that the meter is not the whole story.
+
 **KitchenMetrics models the polar-compound figure only.** That is stated here rather than
 glossed over — and it is not, on reflection, a weakness: the TPC number is precisely the leg of
 the stool a cook *cannot* judge by eye, which is why an instrument is worth having. But the app
@@ -111,6 +116,32 @@ industrial/institutional frying; art. 267 bans reusing discarded frying oil in o
 Note the wording *"aceites y **mantecas**"*: Chile covers animal fats explicitly.
 *Version read: consolidation to August 2017; post-2017 amendments not checked, and article
 numbering shifts between consolidations — verify on [BCN](https://www.bcn.cl/leychile/navegar?idNorma=71271).*
+
+### The Swiss limit, independently corroborated — and what enforcement actually finds
+
+The **Laboratorio cantonale del Ticino** publishes its frying-oil checks. Its February 2026 report
+on the 2025 campaign (*"Qualità dell'olio per frittura"*, Bellinzona) cites the same provision this
+document does — *"Ai sensi dell'Ordinanza del DFI sulle derrate di origine vegetale, i funghi e il
+sale commestibile (ODOV) del 16 dicembre 2016 tale valore, nei grassi e negli oli commestibili per
+friggere, non deve superare il 27 per cento (270 g/kg)"* — which is an official enforcement body
+reading the ordinance exactly as we do.
+
+Its findings are worth stating, because they show the limit is not theoretical:
+
+- **96 samples from 77 businesses; 12 non-compliant (12%)** — restaurants, hotels, takeaways,
+  food trucks and other food businesses.
+- **In 6 of those 12 cases criminal proceedings were opened** against the person responsible,
+  *"a causa del massiccio superamento del valore massimo ammesso di parti polari"*.
+- A further **5 samples could not be judged either way** because of measurement uncertainty —
+  a reminder that the number itself carries an error bar.
+
+The same report also corroborates two things stated elsewhere in this document: that a frying
+oil's smoke point **falls as the oil is used** (*"il quale si abbassa man mano che l'olio viene
+utilizzato"* — so a database of *fresh* smoke points cannot stand in for measuring the used oil),
+and that degradation is recognisable **without any instrument** — rancid or scratchy taste,
+incipient smoking, increased foaming, viscous fat, pungent smell over the hot fryer.
+
+*Source: [Laboratorio cantonale, Ticino — Olio di frittura, campagna 2025](https://m4.ti.ch/fileadmin/DSS/DSP/LC/lcinforma/Rapportini/2026/Olio_frittura_2025.pdf) (PDF, read 2026-07-16).*
 
 ### Switzerland — primary text read
 
