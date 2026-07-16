@@ -23,7 +23,7 @@ that own the remaining figures:
 |---|---|---|
 | 11:36 | 🇮🇹 Ministry of Health — **DGISAN** | email · vigency of Circular 1/1991 |
 | 12:37 | 🇩🇪 **DGF** — Deutsche Gesellschaft für Fettwissenschaft | email · **replied the same day**: forwarded to their experts |
-| 14:07 | 🇲🇽 **COFEPRIS** | email |
+| 14:07 | 🇲🇽 **COFEPRIS** | email → **auto-routed, not answered**: that desk replies that it *"no atiende trámites, ni es vinculatorio, únicamente es de carácter informativo"* and lists the channels. Re-sent the same day to the **Citas Técnicas** channel (`reunionesfomento@`), whose stated purpose is *"consultas precisas sobre la aplicación de las disposiciones técnico-regulatorias"* — though that channel is meant for *sectores regulados*, which we are not, and we said so |
 | 14:37 | 🇮🇪 **FSAI** | email · Advice Line (staffed by food scientists) |
 | 14:38 | 🇨🇦 **CFIA** | email |
 | 14:48 | 🇬🇧 **FSA** | **FOI request** (Freedom of Information Act 2000) · **acknowledged in 12 minutes** by the Information Governance Manager · statutory reply due within 20 working days |
@@ -61,7 +61,7 @@ not taken from a review paper. A citation without a consultation date is worth l
 | Spain | 25% | statutory | **Orden de 26 de enero de 1989, art. 6.3** (BOE-A-1989-2265) | ✅ **2026-07-16** (boe.es) |
 | Argentina | 25% | statutory | **Código Alimentario Argentino art. 552 bis** (Res. Conjunta 17/2021); method ISO 8420:2002 | ✅ **2026-07-16** (boletinoficial.gob.ar) |
 | Chile | 25% | statutory | **Reglamento Sanitario de los Alimentos (D.S. 977/96) art. 266 let. c** | ✅ **2026-07-16** (consolidation to Aug 2017 — see caveat below) |
-| Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) | ⏳ query sent to COFEPRIS **2026-07-16, 14:07 CEST** |
+| Mexico | — | no maximum | NMX-F-068 defines *how to measure*, sets no maximum (verify with COFEPRIS) | ⏳ COFEPRIS asked **2026-07-16**; the citizen desk auto-routed without answering, re-sent to *Citas Técnicas* the same day |
 | United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice | ⏳ **FOI request** (Freedom of Information Act 2000) sent to the FSA **2026-07-16, 14:48 CEST** — acknowledged the same day by the FSA's Information Governance Manager; statutory reply due within 20 working days |
 | Ireland | 25%* | no statutory limit | FSAI; *industry benchmark | ⏳ query sent to the FSAI Advice Line **2026-07-16, 14:37 CEST** |
 | United States | 25%* | no statutory limit | No federal TPC limit **found** (FDA); *voluntary benchmark, some states differ | ⏳ query sent to the FDA (FCIC/FSMA TAN, form 3907, category *Retail Food*) **2026-07-16** |
