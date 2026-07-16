@@ -116,6 +116,27 @@ Suites now: `cost_engine 31 · smoke 64 · i18n 1852 · db_i18n 920 · tpc_limit
 thermal_geometry 102`. Still untested: the thermal engine's DOM-coupled half (Choi–Okos
 properties, results panel).
 
+### Known — found today, not yet fixed *(2026-07-16)*
+
+- **The costing model is European; the legal registry is not.** The app now cites the frying-oil
+  law of twelve countries to the article — and prints **`€` for all of them**. Nine of the twelve
+  do not use the euro, and the Spanish and English interfaces serve *only* non-euro countries
+  besides Spain. Nothing is miscalculated (the arithmetic is currency-agnostic; only the label is
+  wrong), but it is recorded here rather than left to be found. Same for the 10% VAT default
+  (Italian, and coincidentally Spanish) and for "menu price incl. VAT", which has no meaning in the
+  United States. See [SOURCES.md](SOURCES.md) §4.
+
+  **The design was decided before writing any code, and the rejected option is worth recording:**
+  using the **currency symbol** as the selector that drives the applicable law was proposed and
+  turned down, because *currency does not identify jurisdiction*. The euro alone spans Italy (25%),
+  Germany (24% — and a DGF recommendation, not an established statute) and Ireland (no statutory
+  limit at all); the `$` sign spans seven countries in this registry whose rules range from 25% to
+  none to disputed. It would have inferred the specific from the generic — and it would have worked
+  perfectly in Italy, which is where it would have been tested.
+  The country will be the selector and the currency will follow from it. Amounts will never be
+  converted, only relabelled: conversion needs exchange rates → the network → the end of the
+  zero-permission guarantee.
+
 ### Documented *(2026-07-16)*
 
 - **[SOURCES.md](SOURCES.md)** — every figure the app prints, mapped to its published origin, plus

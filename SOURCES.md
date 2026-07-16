@@ -230,6 +230,39 @@ National Restaurant Association. (There is no ISO/IEC standard for food costing.
 
 The engine is a pure function with a public regression test suite (`cost_engine.test.html`).
 
+### ⚠️ The costing model is European. The legal registry is not. *(found 2026-07-16)*
+
+This document holds the app's figures to the primary legal text of twelve countries. The costing
+engine, meanwhile, **prints `€` for all of them** — the symbol is welded into the formatter, and
+there is no notion of currency or country anywhere in the costing path.
+
+**Nine of those twelve countries do not use the euro** (CH, AR, CL, MX, GB, US, CA, AU, NZ). The
+Spanish interface serves Argentina, Chile and Mexico — none of them euro. The English interface
+serves the UK, US, Canada, Australia and New Zealand — none of them euro either. A cook in Zurich
+is given ODOV art. 6 para. 4 cited to the paragraph, and then a plate cost in euros.
+
+**Nothing is miscalculated:** the arithmetic is currency-agnostic, so only the label is wrong. But
+it is stated here rather than left to be discovered.
+
+Two further European assumptions, for the same reason:
+
+- **The VAT default of 10%** is Italian food service (and, by coincidence, Spanish). It is wrong
+  for Switzerland (~8.1%), Argentina (21%), Chile (19%), the UK (20%) — though it is an editable
+  default, not a claim.
+- **"Menu price incl. VAT" has no meaning in the United States**, which has no VAT: sales tax is
+  added at the till, varies by state and county, and never appears on the menu. The USAR
+  `Prime Cost % < 65%` benchmark is likewise American, applied everywhere.
+
+**The fix, and the design decision behind it:** the country becomes the single selector and the
+currency follows from it — *not* the other way round. Using the currency to infer the applicable
+law was considered and **rejected**: the euro alone spans Italy (25%), Germany (24%, and a DGF
+recommendation rather than an established statute) and Ireland (no statutory limit at all), and
+the `$` sign spans seven countries in this very registry whose rules range from 25% to none to
+disputed. **Currency does not identify jurisdiction**, and inferring it would err in the unsafe
+direction more often than not.
+*Amounts will never be converted, only relabelled: conversion needs exchange rates, which needs
+the network, which would end the zero-permission guarantee.*
+
 ---
 
 ## 5. Honest limitations (what is *not* sourced)
