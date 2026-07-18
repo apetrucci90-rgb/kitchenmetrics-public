@@ -93,26 +93,39 @@ updated with their answer. Until then the app calls 24% a *reference figure*, ne
 
 ### ⚠️ The number is never the whole law
 
-Four primary texts were read on 16 July 2026, and every one of them pairs the polar-compound
-figure with a **sensory test** — several add more criteria still:
+Four primary texts were read on 16 July 2026, and **not one of them sets the polar figure on its
+own.** Every text embeds it in a package of further requirements — **sensory** in Spain and
+Argentina, **purely chemical** in Chile and Switzerland:
 
 | Jurisdiction | What the law actually requires |
 |---|---|
 | **Spain** (art. 6) | 6.1 free of substances foreign to frying · 6.2 organoleptic characters must not taint the food · **6.3 polar components below 25%** |
 | **Argentina** (art. 552 bis) | *(a)* alterations in **smell or taste** — listed **first**, and joined by "y/o", so it condemns the oil on its own — *and/or* *(b)* **TPC ≥ 25%** |
-| **Chile** (art. 266) | *(a)* free acidity > 2.5% · *(b)* smoke point < 170 °C · *(c)* **polar compounds > 25%** |
-| **Germany** (DGF) | sensory findings *"im Vordergrund"*, plus polymeric triglycerides (12%), **polar compounds (24%)** and acid value (2%) |
+| **Chile** (art. 266) | *(a)* free acidity > 2.5% · *(b)* smoke point < 170 °C · *(c)* **polar compounds > 25%** — three chemical/physical criteria, **no sensory leg** |
+| **Switzerland** (ODOV art. 6) | para. 2 acidity (Säuregrad) · para. 3 trans fatty acids ≤ 2 g/100 g · **para. 4 polar fraction ≤ 27%** — again **no sensory leg** |
 
-Switzerland's own enforcement laboratory says the same thing from the other direction: the Ticino
-report lists the signs that condemn an oil **with no instrument at all** — rancid or scratchy
-taste, incipient smoking, foaming, viscosity, a pungent smell over the hot fryer. Four laws and
-one regulator, all agreeing that the meter is not the whole story.
+*(Germany's DGF criteria do put sensory findings "im Vordergrund", alongside polymeric
+triglycerides (12%), polar compounds (24%) and acid value (2%) — but the DGF is a learned society
+and its criteria are **not a legal text**, so they do not belong in the count above. See the
+Germany section.)*
+
+Switzerland is the instructive case: its **statute** has no sensory requirement at all, yet its
+own enforcement laboratory approaches the oil from exactly that side — the Ticino report lists the
+signs that condemn an oil **with no instrument at all**: rancid or scratchy taste, incipient
+smoking, foaming, viscosity, a pungent smell over the hot fryer. What no text does is let the
+polar number stand alone.
+
+*Correction, 2026-07-18: this section previously claimed that every text read pairs the polar
+figure with a **sensory test**. That was false. It is true of Spain and Argentina; Chile's and
+Switzerland's further criteria are chemical, and the table listed Germany — not a legal text — in
+place of Switzerland, which was one of the four texts actually read. Art. 6 of the ODOV was
+re-read at source before writing the corrected row.*
 
 **KitchenMetrics models the polar-compound figure only.** That is stated here rather than
 glossed over — and it is not, on reflection, a weakness: the TPC number is precisely the leg of
 the stool a cook *cannot* judge by eye, which is why an instrument is worth having. But the app
-does not replace looking at, smelling and tasting the oil, and in Spain, Argentina and Chile the
-number alone does not decide compliance.
+does not replace looking at, smelling and tasting the oil, and **in none of the four jurisdictions
+whose text we read does the number alone decide compliance.**
 
 **Threshold wording:** Spain requires the content to be *"inferior al 25 por 100"* and Argentina
 condemns oil at *"igual o superior al 25 %"* — so **25.0% is already non-compliant**, not the last

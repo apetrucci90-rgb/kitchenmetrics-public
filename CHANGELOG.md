@@ -141,12 +141,16 @@ properties, results panel).
 
 - **[SOURCES.md](SOURCES.md)** — every figure the app prints, mapped to its published origin, plus
   an honest list of what is *estimated* rather than sourced.
-- **The number is never the whole law.** Four primary texts were read, and every one pairs the
-  polar-compound figure with a **sensory test**: Spain (6.1/6.2/6.3), Argentina (smell/taste listed
-  *first*, joined by "y/o", condemning the oil on its own), Chile (acidity, smoke point, polar),
-  Germany (sensory *"im Vordergrund"* plus three figures). KitchenMetrics models the number only —
-  which is the one leg of the stool a cook cannot judge by eye, and precisely why an instrument
-  earns its place. It does not replace looking, smelling and tasting the oil.
+- **The number is never the whole law.** Four primary texts were read, and not one sets the
+  polar-compound figure on its own — each embeds it in a package of further requirements: Spain
+  (6.1/6.2/6.3, **sensory**), Argentina (smell/taste listed *first*, joined by "y/o", condemning
+  the oil on its own), Chile (acidity, smoke point, polar — **chemical**), Switzerland (acidity,
+  trans fatty acids, polar — **chemical**). KitchenMetrics models the number only — which is the
+  one leg of the stool a cook cannot judge by eye, and precisely why an instrument earns its
+  place. It does not replace looking, smelling and tasting the oil.
+  *(Corrected 2026-07-18: as first published this entry said every text pairs the figure with a
+  **sensory** test, and listed Germany — not a legal text — in place of Switzerland. See
+  [SOURCES.md](SOURCES.md).)*
 
 ---
 
