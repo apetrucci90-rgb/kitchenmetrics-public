@@ -56,7 +56,7 @@ not taken from a review paper. A citation without a consultation date is worth l
 
 | Country | Limit | Status | Legal basis (as cited in-app) | Primary text read |
 |---|---|---|---|---|
-| Italy | 25% | statutory | Ministry of Health Circular no. 1 of 11/01/1991 | ⏳ vigency query sent to the Ministry (DGISAN) **2026-07-16, 11:36 CEST** |
+| Italy | 25% | **disputed** — see note | Ministry of Health Circular no. 1 of 11/01/1991 | ❌ **not read.** Vigency query sent to the Ministry (DGISAN) **2026-07-16, 11:36 CEST**, follow-up **2026-07-18** |
 | Switzerland | 27% | statutory | **ODOV/VLpH art. 6 para. 4** — DFI Ordinance of 16.12.2016 (RS 817.022.17) | ✅ **2026-07-16** (Fedlex; version in force 01.01.2026) |
 | Spain | 25% | statutory | **Orden de 26 de enero de 1989, art. 6.3** (BOE-A-1989-2265) | ✅ **2026-07-16** (boe.es) |
 | Argentina | 25% | statutory | **Código Alimentario Argentino art. 552 bis** (Res. Conjunta 17/2021); method ISO 8420:2002 | ✅ **2026-07-16** (boletinoficial.gob.ar) |
@@ -68,6 +68,30 @@ not taken from a review paper. A citation without a consultation date is worth l
 | Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ⏳ query sent to the CFIA **2026-07-16, 14:38 CEST** |
 | Australia | 27% | disputed | Reviews cite 27%; industry says TPM is not a legal limit — confirm with state regulator | ⏳ query sent to FSANZ **2026-07-16** |
 | New Zealand | 25%* | no statutory limit | FSANZ Food Standards Code; *industry benchmark | ⏳ covered by the FSANZ query **2026-07-16** |
+
+### Italy's 25% — demoted from *statutory* to *disputed*, 19 July 2026
+
+This table listed Italy as **statutory** until 19 July 2026. That was an overclaim, and it is
+withdrawn here on the same grounds it was withdrawn in the app.
+
+Two things are wrong with it. First, **nobody working on this project has read Circular no. 1 of
+11/01/1991.** The 25% reaches us through review papers and industry guides that cite it to one
+another; not one line of the instrument itself has been consulted. Every other row marked
+*statutory* in this table carries a date in the "primary text read" column. Italy never did — it
+carried a pending query instead, and a pending query is not a reading.
+
+Second, and independent of what the Circular turns out to say: a ministerial **circolare** is an
+administrative act addressed to the administration. Its binding force is not that of a statute.
+Even a faithful reading of it would not obviously support the word *statutory*.
+
+**The app still discards at 25% in Italy.** The operative threshold is unchanged and was never
+in question — 25% is the strictest figure in this table, the engine can only ever tighten, and a
+demotion in status must never loosen a limit in a kitchen. What changed is the claim about *why*,
+which is a claim about Italian law and was not ours to make on an unread text.
+
+To resolve it: read the Circular in the *Gazzetta Ufficiale*. If it sets a maximum, this row
+becomes statutory with a reading date like every other. If it recommends one, it joins Germany's
+24% as a criterion rather than a law.
 
 **No TPC limit found for:** the European Union / EFSA, the US FDA, and Codex Alimentarius.
 
