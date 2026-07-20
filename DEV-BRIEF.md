@@ -189,32 +189,39 @@ Il lavoro interessante è nei modelli, e ognuno ha le sue fonti:
   pubblicati — sottostima il tempo di cottura fino a 3,4 volte, nella direzione NON sicura;
   quel bug esisteva anche qui ed è ora bloccato da un benchmark di regressione. Un controllo di
   sanità rifiuta di produrre output se una proprietà derivata (ρ, cp, k, α) diventa non fisica.
-- **La sicurezza friggitrice** confronta il degrado dell'olio con un registro per paese dei
-  limiti TPC di legge (24% DE, 25% IT/ES/FR, 27% CH, esplicitamente *nessuno* in UK/US/CA…),
-  ogni voce con la sua base legale citata per nome. L'app applica sempre il più severo tra il
-  limite chimico dell'olio e la legge locale. Questo registro risulta unico nella categoria —
-  i concorrenti citano "soglie EFSA/FDA" che, a verifica fatta, non esistono (nessuno dei due
-  enti fissa un limite TPC).
+- - **La sicurezza friggitrice** confronta il degrado dell'olio con un registro per paese dei limiti TPC di **12 giurisdizioni**, ogni voce con la sua fonte normativa citata per nome *e uno stato che indica se tale fonte sia effettivamente legge*: 4 statutari (27% CH, 25% ES, 25% AR, 25% CL — tutti e quattro i testi primari letti alla fonte), 2 contestati (IT, AU) e 6 per i quali non è stato trovato alcun limite (MX, UK, IE, US, CA, NZ). L'app applica sempre il più severo tra il limite chimico dell'olio e la legge locale.
+
+  Corretto il 19 luglio 2026: questo paragrafo indicava erroneamente un registro di limiti statutari "(24% DE, 25% IT/ES/FR, 27% CH...)". **Germania e Francia non hanno alcuna voce nel registro** — non l'hanno mai avuta — e il 24% della Germania è una raccomandazione DGF, non una legge, che è precisamente l'errore contro cui `SOURCES.md` mette in guardia. Due file nello stesso repository non coincidevano, e quello con l'impostazione più commerciale era quello sbagliato.
+
+  Ciò che è insolito qui non sono i limiti, ma la colonna dello stato: i concorrenti citano "soglie EFSA/FDA" che, a verifica fatta, non esistono (nessuno dei due enti fissa un limite TPC).
+
 - **Database dei grassi**: 148 record con punti di fumo, composizione e allergeni, un'unica
   fonte di verità sottoposta ad audit; un secondo registro che la consuma è vincolato da test
   a concordare con essa.
 
 ## Test
 
-3.012 asserzioni in sei suite, tutte verdi, eseguite dopo ogni modifica:
+**4.807 asserzioni in quindici suite**, tutte verdi, eseguite dopo ogni modifica (19 luglio 2026). La cifra viene rigenerata da `tests/run_all.js` anziché essere ricordata a memoria — era andata fuori sincrono due volte prima dell'esistenza di questo runner.
 
-| Suite | Asserzioni | Cosa protegge |
+| Suite | Asserzioni | Cosa protegge / Controlli |
 |---|---|---|
-| cost_engine | 31 | modello di costing + pin di regressione per 6 bug corretti |
-| smoke | 64 | cablaggio dell'app; verifica che la lista script del harness coincida con `index.html` |
-| i18n | 1.844 | parità delle chiavi, chiavi duplicate (scartate in silenzio dagli object literal JS) |
+| i18n | 3.212 | parità delle chiavi, chiavi duplicate (scartate in silenzio dagli object literal JS) |
 | db_i18n | 920 | copertura traduzioni del DB grassi + concordanza tra registri |
-| tpc_limits | 138 | integrità del registro legale per giurisdizione |
+| tpc_limits | 173 | integrità del registro legale per giurisdizione, inclusa la `confidence` |
+| thermal_geometry | 102 | autovalori per lastra/cilindro/sfera rispetto a Çengel |
+| smoke | 70 | cablaggio dell'app; verifica che la lista script del harness coincida con `index.html` |
+| acrylamide | 55 | limite di frittura Reg. (UE) 2017/2158 |
+| db_contradictions | 54 | flag del modello patogeni; blocca i due custards (creme all'uovo) che devono mantenerli |
+| cooking_temps | 50 | registro delle temperature al cuore per giurisdizione |
+| load_factor | 45 | c_p di Choi-Okos rispetto ai valori pubblicati di acqua e carne bovina magra |
+| cost_engine | 31 | modello di costing + pin di regressione per 6 bug corretti |
+| data_integrity | 30 | nessuna riga cita una fonte inesistente; difetti noti circoscritti |
+| thermal_radiation | 23 | termine radiativo, solo modalità a calore secco |
+| privacy.manifest | 18 | garanzia di zero permessi, verificata rispetto al manifest |
 | vault | 15 | isolamento dei dati per cliente (regressione anti-contaminazione) |
+| recipes.cycle | 9 | rilevamento di sotto-ricette circolari |
 
-Le suite browser girano headless in Chrome; le suite a moduli su Node. La smoke suite legge la
-lista script del VERO `index.html` invece di tenerne una copia propria — un harness che duplica
-il cablaggio dell'app resta verde mentre l'app è rotta: è successo una volta, non succederà più.
+Le suite browser girano headless in Chrome; le suite a moduli su Node. La smoke suite legge la lista script del VERO `index.html` invece di tenerne una copia propria — un harness che duplica il cablaggio dell'app resta verde mentre l'app è rotta: è successo una volta, non succederà più.
 
 ## La privacy come proprietà di build
 
