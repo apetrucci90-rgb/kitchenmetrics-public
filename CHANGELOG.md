@@ -8,11 +8,62 @@ Dates are the date of the work, not of the Play rollout.
 
 ---
 
-## [Unreleased] — 2026-07-16
+## [Unreleased]
 
 Everything in this section is **committed but not yet built into a release**. Version 1.0
-(versionCode 3) was submitted for review on 15 July 2026 and is frozen; these changes will ship in
-the next build.
+(versionCode 4) was approved and distributed to closed testing on **18 July 2026** and is frozen;
+the changes below will ship in the next build, versionCode 5.
+
+> ⚠️ **This file has a gap.** Work done on 18 and 19 July — the radiative term in the thermal
+> engine, the acrylamide cap, the FDA Food Code cooking temperatures, the per-jurisdiction
+> temperature registry, the Choi–Okos verification against the ASHRAE Handbook, and the
+> demotion of Italy's 25% TPC figure from *statutory* to *disputed* — is recorded in the private
+> repository and in `SOURCES.md`, but was never written up here. It is listed as missing rather
+> than backfilled from memory: an entry written days later, from recollection, is exactly the kind
+> of claim the rest of this file exists to avoid.
+
+### Added — finite shapes in the thermal model *(2026-07-21)*
+
+- **The food can now be a three-dimensional body.** The engine offered slab, cylinder and sphere,
+  and the first two are *infinite* in the textbook sense: an infinite slab loses heat through one
+  pair of faces, an infinite cylinder only radially. A joint of meat is neither, so modelling it
+  flat over-predicts the cook. Two shapes were added — **Block (3D)** and **Finite Cylinder (3D)** —
+  using the classical **product solution (Newman's rule)**: the centre solution of a finite body is
+  the product of the 1-D solutions whose intersection forms it. For a 10 cm cube in a 180 °C oven
+  to a 72 °C core the difference is **145.0 min as an infinite slab against 75.2 min as a real
+  cube**. Dimensions may be left blank and are completed from mass ÷ density.
+  *The code had been contradicting itself here: with no dimension typed, the fallback was
+  documented as "treat the volume as a cube" and then solved as an infinite slab.*
+
+- **⚠️ These shapes return SHORTER times**, which is the correct direction and also the unsafe one.
+  So the three original geometries are unchanged, the conservative slab remains the default, and
+  the panel states that a shorter time is only right if the food really has that shape — a block is
+  a terrine or a tray bake, not a joint that is thick at one end.
+
+### Fixed — the long dimension that made food cook slower *(2026-07-21)*
+
+- **A limit test caught what inspection did not.** Stretch one dimension of a block far enough and
+  it must converge on the infinite slab, because a dimension that long cannot matter. It did not: a
+  block 40× longer than its thickness came out at **249 min against the slab's 145**. The one-term
+  series is valid for `Fo > 0.2`; a very long member has `Fo ≈ 0`, far outside that, and there the
+  truncated series tends not to θ = 1 as the physics requires but to A₁ — up to 1.27 for a slab.
+  That surplus multiplied into the product and slowed the whole solve. **Left in, the new model
+  would have been worse than the one it replaced, and wrong in the direction that overcooks.**
+  Fixed with the physical bound θ ≤ 1: a member whose one-term θ comes out ≥ 1 is out of domain,
+  not slow, so it is dropped and the product re-solved. A long loin now collapses onto exactly the
+  infinite cylinder.
+
+### Tested *(2026-07-21)*
+
+- `thermal_geometry` **102 → 164 assertions**; the original 102 pass unchanged, which is what
+  establishes that nothing already shipped moved. Fifteen suites, **4943 assertions**, all green.
+- **What the new assertions are, stated plainly:** analytic identities (a one-member product must
+  equal the single-geometry solver exactly) and limit cases. They are **not** checked against a
+  published worked example, because none was read at source. Recorded as owed, in the test file and
+  here. The older 102 remain pinned to Çengel's published one-term table.
+- Documentation counts corrected across both repositories. Four figures had rotted — the TPC suite
+  was quoted as 138 and is 173, the load-factor suite as 45 and is 90 — and are now taken from the
+  test runner rather than from memory.
 
 ### Changed — the fryer no longer states more than the law does *(2026-07-16)*
 
