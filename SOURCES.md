@@ -15,24 +15,47 @@ nazionale, uno standard internazionale o la letteratura scientifica. Questo docu
 ogni dato alla sua origine, così che chiunque — cuoco, revisore IT o ispettore — possa
 verificarlo in autonomia.*
 
-Last reviewed: **16 July 2026**. On that date four primary legal texts were read directly
+Last reviewed: **21 July 2026**. On **16 July** four primary legal texts were read directly
 (Switzerland, Spain, Argentina, Chile) and **eight clarification requests** were sent to the bodies
-that own the remaining figures:
+that own the remaining figures. The *Status* column below is the position on **21 July**, five days
+on — and most of it is still silence, which is the honest thing for this table to show.
 
-| Sent (CEST) | Body | Channel |
-|---|---|---|
-| 11:36 | 🇮🇹 Ministry of Health — **DGISAN** | email · vigency of Circular 1/1991 |
-| 12:37 | 🇩🇪 **DGF** — Deutsche Gesellschaft für Fettwissenschaft | email · **replied the same day**: forwarded to their experts |
-| 14:07 | 🇲🇽 **COFEPRIS** | email → **auto-routed, not answered**: that desk replies that it *"no atiende trámites, ni es vinculatorio, únicamente es de carácter informativo"* and lists the channels. Re-sent the same day to the **Citas Técnicas** channel (`reunionesfomento@`), whose stated purpose is *"consultas precisas sobre la aplicación de las disposiciones técnico-regulatorias"* — though that channel is meant for *sectores regulados*, which we are not, and we said so |
-| 14:37 | 🇮🇪 **FSAI** | email · Advice Line (staffed by food scientists) |
-| 14:38 | 🇨🇦 **CFIA** | email → **routed, not answered**: on **2026-07-18** Public Enquiries replied that Ask CFIA handles regulatory questions and instructed us to resubmit through the online contact form, selecting *Industry/Business* → *Food*, with a stated reply time of **20 business days**. Resubmitted **2026-07-19** through that form (Country: *Other → Italy*), stating in the body that we are **not** a food business operator and are using that route only because Ask CFIA directed us to it. **No receipt or case number was issued.** The 20-day clock, if it runs at all, runs from 19 July — not from the original email |
-| 14:48 | 🇬🇧 **FSA** | **FOI request** (Freedom of Information Act 2000) · **acknowledged in 12 minutes** by the Information Governance Manager · statutory reply due within 20 working days |
-| — | 🇺🇸 **FDA** | web form 3907 (FCIC / FSMA Technical Assistance Network), category *Retail Food* |
-| — | 🇦🇺🇳🇿 **FSANZ** | web enquiry form |
+> **Where a reply exists but is not quoted.** Two bodies have answered and their answers are
+> **not reproduced here**: permission to cite private correspondence has been requested and not
+> yet granted. What is recorded is only what we may state ourselves — that a reply arrived and on
+> what date. No conclusion in this document rests on an unquoted reply; where an entry changed,
+> it changed on grounds stated in the open, and the Italy note below is the worked example of
+> that.
+
+| Sent (CEST) | Body | Channel | Status on 21 July |
+|---|---|---|---|
+| 11:36 | 🇮🇹 Ministry of Health — **DGISAN** | email · vigency of Circular 1/1991 | **Replied 17 July.** A follow-up was sent **18 July** and the definitive answer is outstanding. The reply is **not quoted** pending permission to cite. The Italy row was demoted to *disputed* on 19 July on grounds stated openly below — that nobody on this project has read the Circular — and **not** on the strength of that reply |
+| 12:37 | 🇩🇪 **DGF** — Deutsche Gesellschaft für Fettwissenschaft | email · **replied the same day**: forwarded to their experts | Forwarded to their experts on 16 July. **Nothing on the merits since.** The 24 % figure remains attributed as a DGF *recommendation*, which is what it was before the query |
+| 14:07 | 🇲🇽 **COFEPRIS** | email → **auto-routed, not answered**: that desk replies that it *"no atiende trámites, ni es vinculatorio, únicamente es de carácter informativo"* and lists the channels. Re-sent the same day to the **Citas Técnicas** channel (`reunionesfomento@`), whose stated purpose is *"consultas precisas sobre la aplicación de las disposiciones técnico-regulatorias"* — though that channel is meant for *sectores regulados*, which we are not, and we said so | **No answer from either channel.** Neither the original desk nor Citas Técnicas has replied on the merits |
+| 14:37 | 🇮🇪 **FSAI** | email · Advice Line (staffed by food scientists) | **No answer** in five days |
+| 14:38 | 🇨🇦 **CFIA** | email → **routed, not answered**: on **2026-07-18** Public Enquiries replied that Ask CFIA handles regulatory questions and instructed us to resubmit through the online contact form, selecting *Industry/Business* → *Food*, with a stated reply time of **20 business days**. Resubmitted **2026-07-19** through that form (Country: *Other → Italy*), stating in the body that we are **not** a food business operator and are using that route only because Ask CFIA directed us to it. **No receipt or case number was issued.** The 20-day clock, if it runs at all, runs from 19 July — not from the original email | **No answer.** If the 20 business days run, they end about **16 August** |
+| 14:48 | 🇬🇧 **FSA** | **FOI request** (Freedom of Information Act 2000) · **acknowledged in 12 minutes** by the Information Governance Manager · statutory reply due within 20 working days | Acknowledged only. The statutory clock runs from 16 July, so the reply is **due about 13 August**. This is the one deadline in the table with law behind it |
+| — | 🇺🇸 **FDA** | web form 3907 (FCIC / FSMA Technical Assistance Network), category *Retail Food* | **No answer**, and no receipt exists to chase it with |
+| — | 🇦🇺🇳🇿 **FSANZ** | web enquiry form | **No answer**, same caveat |
 
 *(The two web-form submissions carry no timestamped copy — unlike an email, they leave the sender
 no receipt. Both were submitted the same afternoon. The same is true of the CFIA resubmission of
 19 July: the form returned no confirmation number, so its only trace is this note.)*
+
+### Correspondence outside the TPC registry
+
+Three letters concern the **thermal** side of the app rather than frying-oil limits, and had no
+record in this file. They are logged here for the same reason as the table above: a claim is
+worth what its trail is worth.
+
+| Sent | Body | Subject | Status on 21 July |
+|---|---|---|---|
+| **19 July** | 🇺🇸 **ASHRAE** — Handbook Editor | A suspected typographical error in the water-density row of the Choi–Okos thermal-property table: the quadratic coefficient is printed with an exponent three decades from the value the SI form converts to. The letter states the scope of the check — 41 coefficients converted, 40 matching — and the two things it did **not** check | **Replied 21 July.** The reply is **not quoted and its author is not named**: permission to cite has been requested in the response sent the same day and has not been granted. What may be stated is our own side — the error was reported, and the matter is not closed. **No number in this app rests on that reply.** The letter as sent is kept in the private repository |
+| **19 July** | 🇮🇹 **CREA** — Alimenti e Nutrizione | Provenance of the food-composition figures the thermal model uses | **No answer** in two days |
+| **19 July** | 🇮🇹 **Ministry of Health** | Good Hygiene Practice guidance | Draft in the private repository |
+
+*(A fourth request, a FOIA to the Italian Ministry of Tourism, belongs to a different project and
+is not tracked here.)*
 
 Every request asks the same thing and refuses to ask anything else: **whether the norm exists and
 what it says**. None asks for an assessment, endorsement or approval of the application — no public
