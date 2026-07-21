@@ -53,10 +53,99 @@ the changes below will ship in the next build, versionCode 5.
   not slow, so it is dropped and the product re-solved. A long loin now collapses onto exactly the
   infinite cylinder.
 
+### Fixed — numbers that were invented, banded, or simply wrong *(2026-07-21)*
+
+- **Two counts the app printed were contradicted by its own database.** The Thermal panel's
+  *"Documents, read at source"* block — the app's credibility statement — claimed
+  "FDA Food Code 2022 — 258 foods" and "791 foods have no rule behind them". The database
+  held **315** and **782**. Both had drifted as rows were re-sourced. The four figures are
+  now derived from the data and compared by the test suite rather than typed by hand.
+
+- **The fryer invented a degradation rate for 13 fats.** Butter, lard, beef tallow, duck
+  fat, ghee and eight more carry no rate at all, and the code substituted 1.5 %/h — a
+  vegetable-oil figure — then printed a batch increase and an oil life in the same typeface
+  as a sourced number. Both derived figures are now withheld for those fats, with the reason
+  on screen. The discard limit is known for them and is unchanged.
+
+- **And the rate is banded even where it exists.** Found by a tripwire looking for the old
+  fallback: 135 fats share **eight round values**. Nobody has published a degradation rate
+  for refined papaya seed oil or bear fat. The values are **not changed** — there is no
+  better source to change them to — but the panel now says the figures are an order of
+  magnitude from a banded input, and the registry header says it too. It had disclosed
+  exactly this defect for the *limit* field while staying silent about the *rate* field,
+  which is the one driving the advice.
+
+- **A green verdict beside a red one.** When a fat cannot reach the temperature a food
+  needs, the recommendation is clamped to the fat's ceiling — usually above 160 °C — so the
+  panel printed "✅ 180 °C appropriate for chips" directly above "🚨 DANGER: this fat cannot
+  safely reach the temperature this food needs".
+
+- **A false attribution, withdrawn.** The fryer food database's only comment read
+  *"FDA/USDA/ISS/EFSA EXPANDED DATABASE"*. None of those bodies publishes frying base times,
+  bulk densities or oil-absorption coefficients. The attribution is gone and the file now
+  states, field by field, that only the core temperature has any external backing.
+
+- **100 rows removed from that database (332 → 232):** plated dishes and foods whose own
+  name states a method that is not frying — Eggs Benedict, Crème Brûlée, Sushi Roll, Cheese
+  Board, Tahini Sauce, Ceviche, Miso Soup, Halibut Steamed, Pork Chops Roasted. Done by
+  hand, because a keyword filter flagged *Breaded Vegetables*, *Water Chestnuts* and
+  *Pasta (Cooked)*, all three of which are legitimately fried.
+
+- **Four ways the costing engines returned a wrong number in silence:** a sub-recipe with no
+  finished yield was costed as if it made 1000 g (a 200 g sauce priced at a fifth of its
+  cost, in every dish using it); a butchering yield above 100 % was accepted, pricing the
+  edible portion *below* the as-purchased price; cooking loss was silently clamped at 90 %;
+  and monthly fixed costs with no covers-per-month silently became zero. All four were a
+  `|| default` or a `Math.min` deciding on the user's behalf.
+
+- **The acrylamide advice was Italian in every language.** The nine Annex II Part A measures
+  had their plain-language instruction written in Italian in the source, and it is rendered
+  through a translator that translates *from* English — so it stayed Italian with the
+  interface set to English. A second error in the same block dropped the regulation's
+  closing clause "taking into account the food safety requirements" from the instruction a
+  cook reads, turning a qualified rule into an absolute one.
+
+### Added — time and temperature, doses, and sessions *(2026-07-21)*
+
+- **The time–temperature paradigm as a module.** Every temperature field in the app is a
+  single number, and a single number cannot express food safety: safety is a *pair*.
+  D(T) = D_ref · 10^((T_ref−T)/z), the hold for n decimal reductions, and the equivalence
+  t_low = t_high · 10^((T_high−T_low)/z). With z = 6 °C, giving up 6 °C costs ten times the
+  time. It reproduces **no authority's** time/temperature table, and refuses outside the
+  model's domain rather than estimating.
+
+- **Doses per food in the fryer**, portion size × portions, replacing one global quantity
+  that could not describe 4 × 200 g of chips beside 2 × 150 g of squid — and that silently
+  attributed the whole load to whichever food was added first.
+
+- **Cycles per session**, and with them the answer to *"the batch you just ran consumes no
+  oil life"*: the panel now reports the TPC a whole service adds, where that leaves the oil,
+  and **how many cycles remain before the discard limit** — floored, because a cycle that
+  would cross the limit is not a cycle you may run.
+
+- **Two foods, one fryer, two temperatures.** Chips capped at 175 °C for acrylamide beside
+  chicken wanting 182 °C cannot both be fried correctly at one setting. The panel says so.
+
+- The HACCP guidance box was one paragraph of up to six findings. It is now one row per
+  finding, **sorted by severity**, worst first.
+
 ### Tested *(2026-07-21)*
 
-- `thermal_geometry` **102 → 164 assertions**; the original 102 pass unchanged, which is what
-  establishes that nothing already shipped moved. Fifteen suites, **4943 assertions**, all green.
+- `thermal_geometry` **102 → 247 assertions**; the original 102 pass unchanged, which is what
+  establishes that nothing already shipped moved. Seventeen suites, **7031 assertions**, green.
+- **The geometries are now checked against the full Fourier series, not only against a
+  table.** The suite builds the twenty-term solution from the eigenvalue equation, with its
+  own root finder and coefficients, sharing no code with the engine — so agreement is
+  evidence rather than tautology. Measured: at the Fo = 0.2 boundary the one-term form used
+  by the app sits within **2 %** of twenty terms, and within **1 %** from Fo = 0.3 upward.
+  Below 0.2 the error exceeds 5 % *and points the cold way*, which is precisely what the
+  panel's "Fo < 0.2" warning claims — that warning is now earned rather than asserted.
+- Two of those assertions failed on the first run, and **both times the test was wrong and
+  the code was right**: the 1 % bound was too tight for the boundary itself, and the claim
+  that a sphere's characteristic length is the smallest at equal volume is backwards (it is
+  the largest — 0.620 a against a cube's half-edge 0.500 a). Both mistakes are recorded in
+  the test rather than deleted, because the same wrong instinct is what would make someone
+  "fix" the working code.
 - **What the new assertions are, stated plainly:** analytic identities (a one-member product must
   equal the single-geometry solver exactly) and limit cases. They are **not** checked against a
   published worked example, because none was read at source. Recorded as owed, in the test file and
