@@ -25,13 +25,14 @@ that own the remaining figures:
 | 12:37 | 🇩🇪 **DGF** — Deutsche Gesellschaft für Fettwissenschaft | email · **replied the same day**: forwarded to their experts |
 | 14:07 | 🇲🇽 **COFEPRIS** | email → **auto-routed, not answered**: that desk replies that it *"no atiende trámites, ni es vinculatorio, únicamente es de carácter informativo"* and lists the channels. Re-sent the same day to the **Citas Técnicas** channel (`reunionesfomento@`), whose stated purpose is *"consultas precisas sobre la aplicación de las disposiciones técnico-regulatorias"* — though that channel is meant for *sectores regulados*, which we are not, and we said so |
 | 14:37 | 🇮🇪 **FSAI** | email · Advice Line (staffed by food scientists) |
-| 14:38 | 🇨🇦 **CFIA** | email |
+| 14:38 | 🇨🇦 **CFIA** | email → **routed, not answered**: on **2026-07-18** Public Enquiries replied that Ask CFIA handles regulatory questions and instructed us to resubmit through the online contact form, selecting *Industry/Business* → *Food*, with a stated reply time of **20 business days**. Resubmitted **2026-07-19** through that form (Country: *Other → Italy*), stating in the body that we are **not** a food business operator and are using that route only because Ask CFIA directed us to it. **No receipt or case number was issued.** The 20-day clock, if it runs at all, runs from 19 July — not from the original email |
 | 14:48 | 🇬🇧 **FSA** | **FOI request** (Freedom of Information Act 2000) · **acknowledged in 12 minutes** by the Information Governance Manager · statutory reply due within 20 working days |
 | — | 🇺🇸 **FDA** | web form 3907 (FCIC / FSMA Technical Assistance Network), category *Retail Food* |
 | — | 🇦🇺🇳🇿 **FSANZ** | web enquiry form |
 
 *(The two web-form submissions carry no timestamped copy — unlike an email, they leave the sender
-no receipt. Both were submitted the same afternoon.)*
+no receipt. Both were submitted the same afternoon. The same is true of the CFIA resubmission of
+19 July: the form returned no confirmation number, so its only trace is this note.)*
 
 Every request asks the same thing and refuses to ask anything else: **whether the norm exists and
 what it says**. None asks for an assessment, endorsement or approval of the application — no public
@@ -65,7 +66,7 @@ not taken from a review paper. A citation without a consultation date is worth l
 | United Kingdom | 24%* | no statutory limit | FSA — general food-safety law; *industry practice | ⏳ **FOI request** (Freedom of Information Act 2000) sent to the FSA **2026-07-16, 14:48 CEST** — acknowledged the same day by the FSA's Information Governance Manager; statutory reply due within 20 working days |
 | Ireland | 25%* | no statutory limit | FSAI; *industry benchmark | ⏳ query sent to the FSAI Advice Line **2026-07-16, 14:37 CEST** |
 | United States | 25%* | no statutory limit | No federal TPC limit **found** (FDA); *voluntary benchmark, some states differ | ⏳ query sent to the FDA (FCIC/FSMA TAN, form 3907, category *Retail Food*) **2026-07-16** |
-| Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ⏳ query sent to the CFIA **2026-07-16, 14:38 CEST** |
+| Canada | 25%* | no statutory limit | CFIA; *industry benchmark | ⏳ asked twice, **not yet answered on the merits**: email **2026-07-16**, routed on **2026-07-18** to the Ask CFIA online form, resubmitted there **2026-07-19** (no receipt issued) |
 | Australia | 27% | disputed | Reviews cite 27%; industry says TPM is not a legal limit — confirm with state regulator | ⏳ query sent to FSANZ **2026-07-16** |
 | New Zealand | 25%* | no statutory limit | FSANZ Food Standards Code; *industry benchmark | ⏳ covered by the FSANZ query **2026-07-16** |
 
