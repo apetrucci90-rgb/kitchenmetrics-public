@@ -98,6 +98,23 @@ the changes below will ship in the next build, versionCode 5.
   and monthly fixed costs with no covers-per-month silently became zero. All four were a
   `|| default` or a `Math.min` deciding on the user's behalf.
 
+### Corrected — a claim this changelog itself got wrong, the same day *(2026-07-21)*
+
+- The entry above about the fryer database was **not published with this line, and it should
+  have been**: an earlier draft of the source file claimed that **44 absorption notes**
+  explained oil uptake by the food's water content, and therefore contradicted the CREA
+  dossier's finding that microstructure governs uptake. **That count came from a keyword
+  search, not from reading the notes, and it was wrong.** Read properly: 17 of them say
+  water content and then *"significant weight loss during frying"*, which is correct — the
+  water does leave and the mass does drop. 21 say *"moderate frying behaviour"*, vague but
+  claiming nothing about uptake. Three describe tofu. One correctly says a chicken thigh
+  holds more moisture than a breast and so takes longer.
+  **Exactly one note tied water content to absorption** — mushrooms — and that one is
+  corrected. The other 43 are left alone, because correcting text that is not wrong is how a
+  database gains errors rather than loses them.
+  *Recorded rather than quietly edited: a project that publishes its corrections has to
+  publish the corrections to its corrections, or the practice is decoration.*
+
 - **The acrylamide advice was Italian in every language.** The nine Annex II Part A measures
   had their plain-language instruction written in Italian in the source, and it is rendered
   through a translator that translates *from* English — so it stayed Italian with the
