@@ -10,6 +10,52 @@ Dates are the date of the work, not of the Play rollout.
 
 ## [Unreleased]
 
+### Read at source — 22 July 2026
+
+- **The Italian 25% frying-oil figure is not a law, and now we can prove it in public.**
+  Circolare del Ministero della Sanità 11 gennaio 1991 n. 1 has been read in full and
+  archived. Its operative sentence says the **Istituto Superiore di Sanità** *"ritiene …
+  sia opportuno"* that polar compounds not exceed 25 g/100 g — an opinion, relayed by the
+  Ministry, adopted *"in analogia a quanto previsto dalla legislazione di altri Paesi"*.
+  The Circular also describes a draft bill under which the binding limit was to be set by a
+  **later ministerial decree it does not contain**. Italy moves from *disputed* to **no
+  statutory limit, benchmark 25%** — the same shape as the UK and Ireland.
+  **The discard point does not move.** Every fat in the registry carries 25%, so an Italian
+  kitchen is still told to discard at 25 — from the fat's own chemistry rather than from a
+  law that turned out not to exist. A demotion in status must never loosen a limit in a
+  kitchen, and a test now asserts exactly that.
+
+- **Allergen names now follow Reg. (EU) 1169/2011 Annex II, which had never been opened.**
+  The fryer panel has cited that regulation for months. Reading it showed the names did not
+  match: *"Wheat"* is not a category — entry 1 is *"cereals containing gluten, namely:
+  wheat, rye, barley, oats, spelt, kamut"*, and naming the example instead of the category
+  **under-declares for anyone avoiding rye or barley**. *"Tree Nuts"* is US FALCPA wording;
+  one row read *"Tree Nuts (FDA)"*, a US agency named inside a field presented under EU law.
+  42 terms normalised. Still open, and running the other way: celery and sulphites are
+  declared by no food in either database, which is **not** asserted to be correct.
+
+- **One fat contradicted its own composition.** Refined Camelina Oil carried `risk: "low"`
+  at 64% polyunsaturates. Of the 49 fats above 55% PUFA, forty are "high" and eight
+  "medium"; camelina was alone at "low", with no note claiming an exception. Polyunsaturation
+  is what makes a fat oxidise. Corrected, and pinned three ways.
+
+- **The banded oil-degradation rate is coarse but not arbitrary** — measured against our own
+  registry, it tracks polyunsaturation with a rank correlation of τ ≈ 0.70, which is the
+  direction the CREA 2017 scientific dossier gives. That is a materially better thing to say
+  than "banded", and it is what the file now says.
+
+- **Checked and NOT changed:** four Italian trade articles announcing "new EU rules" on
+  acrylamide all describe Reg. (EU) 2017/2158 itself. No maximum levels exist. The claim
+  stands — but it now carries the date it was checked and an admission that it rests on
+  trade press rather than on the consolidated text of Reg. (EU) 2023/915, which remains
+  unopened.
+
+- **Not read, and listed as such:** Codex CXC 67-2009 (HTTP 403 through the FAO proxy), and
+  Polley, Snyder & Kotnour, *A Compilation of Thermal Properties of Foods*, Food Technology
+  34(11):76–94 (1980) — the cross-check we want for the Choi–Okos properties, consultable
+  "in the library of the IIR headquarters only". The debt is no longer vague: it has a
+  citation and a page range, so it can be requested rather than wished for.
+
 Everything in this section is **committed but not yet built into a release**. Version 1.0
 (versionCode 4) was approved and distributed to closed testing on **18 July 2026** and is frozen;
 the changes below will ship in the next build, versionCode 5.
