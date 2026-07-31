@@ -52,7 +52,7 @@
 <div class="wrap">
   <header>
     <div class="panel-title">Lipid Science Database</div>
-    <div class="panel-desc">Physical &amp; chemical analysis of fats and oils · USDA/IOC/AOCS sources</div>
+    <div class="panel-desc">Physical &amp; chemical analysis of fats and oils · 40 of the 148 entries cite USDA, IOC or AOCS; the rest name a journal without identifying a paper</div>
     <div class="demo-note">
       This is one panel of <a href="https://github.com/apetrucci90-rgb/kitchenmetrics-public">KitchenMetrics</a>,
       published as a standalone live demo. The full app (food costing, HACCP fryer analyzer, thermal
@@ -184,7 +184,11 @@
     document.getElementById('liAllergen').textContent = l.allergen || '—';
     const impStr = l.imp && l.imp !== '-' ? l.imp + ' | ' + l.tpc : (l.tpc || '—');
     document.getElementById('liImp').textContent = impStr;
-    document.getElementById('liSource').textContent = 'Source: ' + l.src;
+    document.getElementById('liSource').innerHTML =
+      '<b>Attributed to:</b> ' + l.src + '<br>' +
+      'A journal or an organisation — not a specific paper. Measured across all 148 rows, ' +
+      'the attribution field holds 40 distinct strings and only one carries a year: there is no ' +
+      'author, volume, page or DOI to look up. Treat it as a lead to check, not as a citation.';
     const riskMap = { low: 'badge-low', medium: 'badge-medium', high: 'badge-high' };
     document.getElementById('liRisk').innerHTML = '<span class="badge ' + (riskMap[l.risk] || '') + '">' + (l.risk || '?').toUpperCase() + '</span>';
   }

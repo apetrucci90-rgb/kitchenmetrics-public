@@ -10,6 +10,53 @@ Dates are the date of the work, not of the Play rollout.
 
 ## [Unreleased]
 
+### Read at source — 31 July 2026
+
+- **The freezing panel's error bar doubled, from ±10 % to ±20 %.** It had shown ±10 %,
+  described to the user as "the accuracy the method's authors claim". Cleland, D.J. (2011),
+  *Freezing: Time Calculations*, Encyclopedia of Agricultural, Food and Biological
+  Engineering, 2nd ed., Taylor & Francis, pp. 635–639, DOI 10.1081/E-EAFE2-120045855, read
+  in full, gives four figures on p. 638 that are **not interchangeable**: maximum
+  differences up to ±30 %, 95 % confidence limits of ±15–20 %, an inherent uncertainty
+  under ±10 % — but only *"when it is used within the range of conditions for which it was
+  developed"* — and, for practice, estimates that *"should be treated as being accurate to
+  within ±20 % at best"*, because product characteristics and freezing conditions are
+  seldom known accurately or tightly controlled. The app cannot establish that a user is
+  inside the development range: the heat transfer coefficient is estimated, composition is
+  a database row, and the initial freezing point is often swept rather than measured. It
+  had been quoting the best case as the general one. Widening a band is the cheap direction
+  to be wrong in.
+
+- **The fat database stopped calling an attribution a citation.** All 148 rows carry a
+  `src` field, printed on screen under the word "Source:". Counted: **40 distinct strings,
+  exactly one carrying a year.** The rest name a journal or an organisation — no author, no
+  volume, no page, no DOI — so no reader can reach a document. The file also contains
+  evidence against itself: the same publication written two ways, *Food Chemistry* on 7
+  rows beside *Food Chemistry Journal* on 14, and two more pairs like it, which is what
+  happens when a name is recalled rather than copied from a document in hand. This says
+  nothing about whether the numbers are right; most are probably fine. It says they are not
+  checkable, and the label promised they were. They now read **"Attributed to:"** with a
+  sentence stating that the app cannot put the document in front of you. The strings are
+  kept — a lead to check beats a blank.
+
+- **A stylesheet had been rewriting the SI.** `text-transform: uppercase` on the label rules
+  turned `(g)`, `(kW)`, `(min)`, `(cm)`, `(h)` into `(G)`, `(KW)`, `(MIN)`, `(CM)`, `(H)` on
+  screen — 37 labels, on the first screen a cook sees. G is not the gram, KW is not a unit,
+  and in the SI the case of a prefix is exactly what separates milli from mega. Found from
+  a screenshot rather than from a test, so there is now a test, pinned to the two
+  declarations that carry units. It was verified to fail against the pre-fix stylesheet
+  before being trusted.
+
+- **Also disclosed rather than tidied away:** the crystallisation column holds a temperature
+  on 135 rows and a crystal habit on the other 13, under one label; and a note attributing
+  to the CREA 2017 dossier the claim that *TPC formation* tracks unsaturation was corrected
+  — the source says **oxidation** does, and TPC also counts hydrolysis products.
+
+- **Test suite: 36 suites, 12,694 assertions, zero failures** (31 July 2026), regenerated
+  from the runner. A new suite checks that the source archive's manifest agrees with the
+  folder it indexes — its stated total had read "17" for ten days while the table listed 19.
+
+
 ### Read at source — 22 July 2026
 
 - **The Italian 25% frying-oil figure is not a law, and now we can prove it in public.**
