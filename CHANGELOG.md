@@ -10,6 +10,54 @@ Dates are the date of the work, not of the Play rollout.
 
 ## [Unreleased]
 
+### Read at source — 31 July 2026 (later the same day)
+
+- **A document registry ships with the app.** Thirty entries, one per document the app
+  leans on, each carrying what it is, where a reader can obtain it, what claim in the app
+  rests on it — and, separately, two things that are usually conflated. `tier` says whether
+  a document is **primary** (the enacted text, the paper reporting the measurements) or
+  **secondary** (a handbook, an encyclopedia entry, a review). `status` says how far we
+  actually got: **read at first hand**, **seen only in part**, or **not obtained at all**.
+  Twenty-three read, three partial, four never obtained.
+
+  Listing sources on that second axis made something visible that counting them never
+  would: in three cases the primary source is *not obtained* while the secondary one that
+  reports it *is read*.
+
+  | primary source | reaches us through | what rests on it |
+  |---|---|---|
+  | Choi & Okos (1986) | ASHRAE Refrigeration ch. 9 | the cooking engine's 38 coefficients |
+  | Cleland et al. (1987a) | ASHRAE Refrigeration ch. 20 | the freezing engine's shape factor |
+  | Hossain, Cleland & Cleland (1992) | Cleland (2011) | the shape factor recommended instead |
+
+  Both engines take their core numbers from a handbook that reports them. This is not a
+  defect in the numbers — ASHRAE is a serious body and verifying 38 coefficients against
+  its tabulation is real work. It is a difference in what may be said: *"matches the ASHRAE
+  tabulation"* and *"matches Choi & Okos"* are not the same claim, and only the first is
+  ours to make. The registry now says which is which, on every row.
+
+- **One row of ASHRAE Table 3 does not reproduce, and it has been reported.** While
+  checking what the app inherits from that chapter, the "Specific Heat Above Freezing"
+  column was recomputed for 28 foods using the chapter's own Equation (7) and the
+  constituent coefficients from its Tables 1 and 2. Twenty-seven come back within 1.1 %,
+  which is what rounding to two decimals costs — including the chapter's own worked
+  example. **Chicken does not**: published at 1.04 Btu/(lb·°F), and 4.34 kJ/(kg·K) in the
+  2014 SI edition where liquid water is 4.18, against 0.821 recomputed — a 21 % difference,
+  twenty times the largest disagreement among the rows that do reproduce. Equation (7) is a
+  mass-weighted average of constituents, none of which has a specific heat above water's,
+  so a food cannot exceed water; within Table 3 itself the most watery item, club soda at
+  99.90 % water, is printed *below* the chicken. Reported to ASHRAE on 31 July 2026 with a
+  self-contained script they can run.
+
+  **The app is not affected.** The error is in the *tabulated* column, not in the Tables 1
+  and 2 coefficients the engine uses, and this app recomputes properties from composition
+  at run time rather than storing tabulated values — which is the only reason it was
+  visible at all. That is a position, not a merit. The registry entry for that chapter now
+  carries the caveat, because the registry vouches for the document.
+
+- **Test suite: 36 suites, 12,703 assertions, zero failures**, regenerated from the runner.
+
+
 ### Read at source — 31 July 2026
 
 - **The freezing panel's error bar doubled, from ±10 % to ±20 %.** It had shown ±10 %,
