@@ -37,6 +37,17 @@ ingredient prices, yields, portion weights, equipment settings, cost parameters 
 private app storage (<code>SharedPreferences</code>).</p>
 <ul>
   <li>This data <strong>never leaves your device</strong>. It is not uploaded and not shared.</li>
+  <li><strong>Android's own backup is switched off.</strong> This matters: an app without the
+      <code>INTERNET</code> permission still cannot send data itself, but the operating system can do it
+      on the app's behalf &mdash; Auto Backup copies app data to your Google Drive, and device-to-device
+      transfer copies it to a new phone during setup. Neither requires a permission from us. Both are
+      disabled explicitly in this build (<code>android:allowBackup="false"</code> plus a
+      <code>dataExtractionRules</code> file that excludes cloud backup <em>and</em> device transfer,
+      because on Android&nbsp;12 and later the first setting alone does not stop the second).</li>
+  <li><strong>Consequence you should know about:</strong> because nothing is backed up, your saved
+      recipes, clients and settings are <em>not</em> transferred if you change phone, reset the device,
+      or uninstall the app. They exist only on that device. Keep your own record of anything you cannot
+      afford to lose.</li>
   <li>It is private to the app and unreadable by other apps.</li>
   <li>Uninstalling KitchenMetrics deletes it. You may also clear it via Android Settings → Apps → KitchenMetrics →
       Storage → Clear data.</li>
@@ -81,7 +92,7 @@ or delete. The data on your device is entirely under your control.</p>
 "Last updated" date revised.</p>
 
 <h2>10. Contact</h2>
-<p>Questions about this policy: <strong>apetrucci90@gmail.com</strong></p>
+<p>Questions about this policy: <strong>uncuocoatavola@gmail.com</strong></p>
 
 </body>
 </html>
