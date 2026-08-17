@@ -9,9 +9,11 @@
          max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; color: #1a1a1a; background: #fff; }
   h1 { font-size: 1.6rem; border-bottom: 2px solid #b84a2a; padding-bottom: .5rem; }
   h2 { font-size: 1.05rem; margin-top: 2rem; color: #b84a2a; }
+  h3 { font-size: .95rem; margin-top: 1.4rem; margin-bottom: .3rem; }
   .meta { color: #777; font-size: .9rem; }
   code { background: #f5f3ef; padding: .1rem .3rem; border-radius: 3px; font-size: .9em; }
   .box { background: #eaf4ee; border-left: 3px solid #1e6e3c; padding: .75rem 1rem; margin: 1rem 0; }
+  .warn { background: #fdf3e7; border-left: 3px solid #b84a2a; padding: .75rem 1rem; margin: 1rem 0; }
 </style>
 </head>
 <body>
@@ -19,7 +21,8 @@
 <h1>Privacy Policy — KitchenMetrics</h1>
 <p class="meta">
   App: <strong>KitchenMetrics — Professional Cooking Suite</strong> (<code>com.kitchenmetrics.app</code>)<br>
-  Effective: 12 July 2026 · Last updated: 16 August 2026
+  Platforms: Android and iOS<br>
+  Effective: 12 July 2026 · Last updated: 17 August 2026
 </p>
 
 <div class="box">
@@ -33,8 +36,12 @@ name, email, phone number, location, contacts, photos, or any device identifier.
 
 <h2>2. Data stored on your device</h2>
 <p>So you can resume work after closing the app, KitchenMetrics saves the values you type into its calculators —
-ingredient prices, yields, portion weights, equipment settings, cost parameters — locally, in Android's
-private app storage (<code>SharedPreferences</code>).</p>
+ingredient prices, yields, portion weights, equipment settings, cost parameters — on the device itself. Where it
+is kept, and what your operating system may then do with it, differs between Android and iOS, so the two are
+described separately below.</p>
+
+<h3>2.1 Android</h3>
+<p>Data is stored in the app's private storage (<code>SharedPreferences</code>).</p>
 <ul>
   <li>This data <strong>never leaves your device</strong>. It is not uploaded and not shared.</li>
   <li><strong>Android's own backup is switched off.</strong> This matters: an app without the
@@ -53,12 +60,48 @@ private app storage (<code>SharedPreferences</code>).</p>
       Storage → Clear data.</li>
 </ul>
 
+<h3>2.2 iOS</h3>
+<p>Data is stored inside the app's own sandbox, in two places that hold the same information: the web view's
+local storage, and the system preferences store (<code>UserDefaults</code>). The second exists because iOS
+treats web-view local storage as expendable and may clear it when the device runs short of space; the copy is
+what stops a full working set of recipes from disappearing for that reason. Both locations are private to
+KitchenMetrics and are not readable by other apps.</p>
+
+<div class="warn">
+  <strong>Please read this if you use iCloud Backup — it differs from the Android behaviour above.</strong>
+  <p style="margin:.6rem 0 0">Apple backs up an app's sandbox as part of the device backup. If iCloud Backup is
+  switched on in your iOS settings — it is on by default for many devices — then the data KitchenMetrics has
+  saved <strong>is included in that backup and is copied to Apple's servers</strong>, along with the rest of
+  your device. The same applies to an encrypted backup made to a computer.</p>
+  <p style="margin:.6rem 0 0">We want to be exact about what this does and does not mean. <strong>We still
+  receive nothing</strong>: the app sends nothing anywhere, and we operate no server and hold no copy of your
+  data. The backup is made by your device, to your own Apple account, under your control and Apple's privacy
+  terms — not to us and not to any third party we have chosen.</p>
+  <p style="margin:.6rem 0 0">You can switch it off for this app in
+  <strong>Settings → [your name] → iCloud → Manage Account Storage → Backups → [your device]</strong>, where
+  KitchenMetrics can be excluded individually.</p>
+  <p style="margin:.6rem 0 0"><strong>The trade-off, stated plainly:</strong> leaving the backup on means your
+  recipes survive a lost or replaced phone. Switching it off means they do not, exactly as on Android. Neither
+  choice sends anything to us. We have deliberately not made this decision for you.</p>
+</div>
+
+<ul>
+  <li>Uninstalling KitchenMetrics deletes the data held on the device. A copy already inside an iCloud backup
+      is governed by your iCloud settings, not by the app.</li>
+</ul>
+
 <h2>3. Network use</h2>
 <p><strong>None.</strong> KitchenMetrics makes no network requests of any kind. It contacts no server,
 no analytics service and no third party. It works entirely offline, including in aeroplane mode.</p>
-<p>This is not only a policy — it is a property of the app itself. KitchenMetrics does not hold the
-Android <code>INTERNET</code> permission, so the operating system will not permit it to send anything
-anywhere, whatever its code might attempt.</p>
+<p><strong>On Android</strong> this is not only a policy — it is a property of the app itself. KitchenMetrics
+does not hold the Android <code>INTERNET</code> permission, so the operating system will not permit it to send
+anything anywhere, whatever its code might attempt.</p>
+<p><strong>On iOS</strong> we cannot make the same claim, and we would rather say so than repeat an Android
+sentence that does not apply. iOS has no equivalent permission to withhold: network access is not something an
+app must ask for, so there is no switch we can decline. What holds on iOS is that the app contains no
+networking code and no third-party SDK that could contain any. That is a weaker guarantee than Android's — it
+rests on the app being what we say it is, rather than on the operating system refusing — and calling it
+anything stronger would be untrue.</p>
 <p>Earlier versions optionally queried USDA FoodData Central for public nutritional data. That lookup
 was removed on 13 July 2026. The scientific food data it provided is now embedded in the app itself.</p>
 
@@ -67,17 +110,21 @@ was removed on 13 July 2026. The scientific food data it provided is now embedde
 
 <h2>5. Analytics, advertising and tracking</h2>
 <p>KitchenMetrics contains <strong>no analytics SDK, no advertising SDK and no crash-reporting SDK</strong>.
-It does not track you across apps or websites, and builds no profile of you.</p>
+It does not track you across apps or websites, and builds no profile of you. It requests no tracking
+permission on iOS, because it has nothing to track you with.</p>
 
 <h2>6. Permissions</h2>
-<p>KitchenMetrics requests <strong>no permission that grants access to your device or your data</strong>.
-In particular it does <strong>not</strong> hold the <code>INTERNET</code> permission, so it cannot send
-anything anywhere. It has no access to your location, camera, microphone, contacts, files or storage.</p>
-<p>For completeness: the build contains one internal, signature-level permission
-(<code>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>) that the Android support libraries add
-automatically. It is scoped to this app, is used only so the app's own components can talk to each
-other, and grants no access to anything on your phone. We mention it because it appears in the
+<p>KitchenMetrics requests <strong>no permission that grants access to your device or your data</strong> on
+either platform. It has no access to your location, camera, microphone, contacts, files or storage.</p>
+<p><strong>Android:</strong> in particular it does <strong>not</strong> hold the <code>INTERNET</code>
+permission, so it cannot send anything anywhere. For completeness, the build contains one internal,
+signature-level permission (<code>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>) that the Android support
+libraries add automatically. It is scoped to this app, is used only so the app's own components can talk to
+each other, and grants no access to anything on your phone. We mention it because it appears in the
 manifest and we would rather list it than have you find it.</p>
+<p><strong>iOS:</strong> the app declares no usage descriptions, which is the mechanism by which an iOS app
+asks for the camera, the microphone, the photo library, location or contacts. An app that declares none cannot
+request them, and iOS will not present you with a prompt from KitchenMetrics for any of them.</p>
 
 <h2>7. Children</h2>
 <p>KitchenMetrics is a professional tool for kitchen and hospitality work. It is not directed at children and
@@ -85,7 +132,8 @@ does not knowingly collect data from anyone, including children.</p>
 
 <h2>8. Your rights</h2>
 <p>Because we hold no personal data about you on any server, there is nothing for us to export, correct
-or delete. The data on your device is entirely under your control.</p>
+or delete. The data on your device is entirely under your control. On iOS, any copy held in an iCloud backup
+is likewise under your control, through your Apple account settings.</p>
 
 <h2>9. Changes</h2>
 <p>If this policy changes, the updated version will be published at this address and the
